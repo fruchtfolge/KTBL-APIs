@@ -1,0 +1,899 @@
+{
+  "_id": "cropObject",
+  "_rev": "3-608be409ef3413bbe5cc6e47f53a0b21",
+  "Ackergras- und Leguminosengemenge (Biogasproduktion)": {
+    "name": "Ackergras- und Leguminosengemenge (Biogasproduktion)",
+    "tillage": [
+      "Häcksler",
+      "Ladewagen"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Dauergrünland (Biogasproduktion)": {
+    "name": "Dauergrünland (Biogasproduktion)",
+    "tillage": [
+      "Ladewagen",
+      "Häcksler"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, mittlerer Boden"
+    ]
+  },
+  "Ackergras - Anwelksilage": {
+    "name": "Ackergras - Anwelksilage",
+    "tillage": [
+      "Ballen",
+      "Häcksler",
+      "Ladewagen"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, mittlerer Boden"
+    ]
+  },
+  "Dauergrünland, grasbetont - Bodenheu": {
+    "name": "Dauergrünland, grasbetont - Bodenheu",
+    "tillage": [
+      "Ballen",
+      "Ladewagen"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, mittlerer Boden"
+    ]
+  },
+  "Ackergras - Bodenheu": {
+    "name": "Ackergras - Bodenheu",
+    "tillage": [
+      "Ballen",
+      "Ladewagen"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, leichter Boden",
+      "mittel, mittlerer Boden",
+      "mittel, schwerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Dauergrünland, grasbetont - Anwelksilage": {
+    "name": "Dauergrünland, grasbetont - Anwelksilage",
+    "tillage": [
+      "Ballen",
+      "Häcksler",
+      "Ladewagen"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, mittlerer Boden"
+    ]
+  },
+  "Dauergrünland - Frischfutter": {
+    "name": "Dauergrünland - Frischfutter",
+    "tillage": [
+      "Ladewagen"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, mittlerer Boden"
+    ]
+  },
+  "Futterrüben (Biogasproduktion)": {
+    "name": "Möhren",
+    "tillage": [
+      "Kreiseleggen, Saat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Durchwachsene Silphie (Biogasproduktion), 12 Jahre, Erntejahr": {
+    "name": "Durchwachsene Silphie (Biogasproduktion), 12 Jahre, Erntejahr",
+    "tillage": [
+      "Häcksler"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, mittlerer Boden"
+    ]
+  },
+  "Durchwachsene Silphie (Biogasproduktion), 12 Jahre, Anpflanzjahr": {
+    "name": "Durchwachsene Silphie (Biogasproduktion), 12 Jahre, Anpflanzjahr",
+    "tillage": [
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "mittel, mittlerer Boden"
+    ]
+  },
+  "Durchwachsene Silphie (Biogasproduktion), 12 Jahre, Rekultivierung": {
+    "name": "Durchwachsene Silphie (Biogasproduktion), 12 Jahre, Rekultivierung",
+    "tillage": [
+      "wendend"
+    ],
+    "yield": [
+      "mittel, mittlerer Boden"
+    ]
+  },
+  "Mais - Corn-Cob-Mix": {
+    "name": "Mais - Corn-Cob-Mix",
+    "tillage": [
+      "nichtwendend, Kreiseleggen, Saat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, leichter Boden",
+      "mittel, mittlerer Boden",
+      "mittel, schwerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Grassamen": {
+    "name": "Grassamen",
+    "tillage": [
+      "nichtwendend, Kreiseleggensaat"
+    ],
+    "yield": [
+      "mittel, mittlerer Boden"
+    ]
+  },
+  "Frühkartoffeln": {
+    "name": "Frühkartoffeln",
+    "tillage": [
+      "wendend, gezogene Saatbettbereitung, Legen"
+    ],
+    "yield": [
+      "hoch, leichter Boden",
+      "mittel, leichter Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Mais - Corn-Cob-Mix (Biogasproduktion)": {
+    "name": "Mais - Corn-Cob-Mix (Biogasproduktion)",
+    "tillage": [
+      "nichtwendend, Kreiseleggen, Saat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Mais - Körnermais": {
+    "name": "Mais - Körnermais",
+    "tillage": [
+      "nichtwendend, Kreiseleggen, Saat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, leichter Boden",
+      "mittel, mittlerer Boden",
+      "mittel, schwerer Boden",
+      "niedrig, leichter Boden",
+      "niedrig, mittlerer Boden"
+    ]
+  },
+  "Mais - Körnermais (Bioethanolproduktion)": {
+    "name": "Mais - Körnermais (Bioethanolproduktion)",
+    "tillage": [
+      "wendend, gezogene Saatbettbereitung, Saat",
+      "nichtwendend, Kreiseleggen, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Mais - Silomais": {
+    "name": "Mais - Silomais",
+    "tillage": [
+      "nichtwendend, Kreiseleggen, Saat",
+      "nichtwendend, Kreiseleggen, Saat, eigenmechanisiert",
+      "wendend, gezogene Saatbettbereitung, Saat",
+      "wendend, gezogene Saatbettbereitung, Saat, eigenmech"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, leichter Boden",
+      "mittel, mittlerer Boden",
+      "mittel, schwerer Boden",
+      "niedrig, leichter Boden",
+      "hoch, leichter Boden"
+    ]
+  },
+  "Mais - Silomais (Biogasproduktion)": {
+    "name": "Mais - Silomais (Biogasproduktion)",
+    "tillage": [
+      "nichtwendend, Kreiseleggen, Saat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Miscanthus (thermische Nutzung), 20 Jahre, Erntejahr": {
+    "name": "Miscanthus (thermische Nutzung), 20 Jahre, Erntejahr",
+    "tillage": [
+      "Ballen",
+      "Häcksler"
+    ],
+    "yield": [
+      "mittel, mittlerer Boden"
+    ]
+  },
+  "Miscanthus (thermische Nutzung), 20 Jahre, Erntejahr und Rekultivierung": {
+    "name": "Miscanthus (thermische Nutzung), 20 Jahre, Erntejahr und Rekultivierung",
+    "tillage": [
+      "Ballen",
+      "Häcksler"
+    ],
+    "yield": [
+      "mittel, mittlerer Boden"
+    ]
+  },
+  "Miscanthus (thermische Nutzung), 20 Jahre, Anpflanzjahr": {
+    "name": "Miscanthus (thermische Nutzung), 20 Jahre, Anpflanzjahr",
+    "tillage": [
+      "wendend, Kreiseleggen, Pflanzen"
+    ],
+    "yield": [
+      "mittel, mittlerer Boden"
+    ]
+  },
+  "Pappeln (thermische Nutzung), 21 Jahre, Anpflanzjahr": {
+    "name": "Pappeln (thermische Nutzung), 21 Jahre, Anpflanzjahr",
+    "tillage": [
+      "wendend, gezogene Saatbettbereitung, Pflanzen"
+    ],
+    "yield": [
+      "mittel, mittlerer Boden"
+    ]
+  },
+  "Pappeln (thermische Nutzung), 21 Jahre, Erntejahr": {
+    "name": "Pappeln (thermische Nutzung), 21 Jahre, Erntejahr",
+    "tillage": [
+      "2-jähriger Umtrieb, Häcksler"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Pflanzkartoffeln (Vermehrung)": {
+    "name": "Pflanzkartoffeln (Vermehrung)",
+    "tillage": [
+      "wendend, gezogene Saatbettbereitung, Legen",
+      "nichtwendend, gezogene Saatbettbereitung, Legen"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, leichter Boden",
+      "mittel, mittlerer Boden",
+      "mittel, schwerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Pappeln (thermische Nutzung), 21 Jahre, letztes Jahr mit Rekultivierung": {
+    "name": "Pappeln (thermische Nutzung), 21 Jahre, letztes Jahr mit Rekultivierung",
+    "tillage": [
+      "2-jähriger Umtrieb, Häcksler"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Silomais - Sorghumgemenge (Biogasproduktion)": {
+    "name": "Silomais - Sorghumgemenge (Biogasproduktion)",
+    "tillage": [
+      "nichtwendend, Kreiseleggen, Saat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Sommerackerbohnen - Körnergewinnung": {
+    "name": "Sommerackerbohnen - Körnergewinnung",
+    "tillage": [
+      "Direktsaat",
+      "nichtwendend, Kreiseleggensaat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, leichter Boden",
+      "mittel, mittlerer Boden",
+      "mittel, schwerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Sommergerste - Braugerste": {
+    "name": "Sommergerste - Braugerste",
+    "tillage": [
+      "Direktsaat",
+      "nichtwendend, Kreiseleggensaat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, leichter Boden",
+      "mittel, mittlerer Boden",
+      "mittel, schwerer Boden",
+      "niedrig, leichter Boden",
+      "niedrig, mittlerer Boden"
+    ]
+  },
+  "Sommererbsen - Futtererbsen": {
+    "name": "Sommererbsen - Futtererbsen",
+    "tillage": [
+      "Direktsaat",
+      "nichtwendend, Kreiseleggensaat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, leichter Boden",
+      "mittel, mittlerer Boden",
+      "mittel, schwerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Sommerhafer - Futterhafer": {
+    "name": "Sommerhafer - Futterhafer",
+    "tillage": [
+      "Direktsaat",
+      "nichtwendend, Kreiseleggensaat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, leichter Boden",
+      "mittel, mittlerer Boden",
+      "mittel, schwerer Boden",
+      "niedrig, leichter Boden",
+      "niedrig, mittlerer Boden"
+    ]
+  },
+  "Sonnenblumen - Körnersonnenblumen": {
+    "name": "Sonnenblumen - Körnersonnenblumen",
+    "tillage": [
+      "nichtwendend, Kreiseleggen, Saat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, leichter Boden",
+      "hoch, mittlerer Boden",
+      "hoch, schwerer Boden",
+      "mittel, leichter Boden",
+      "mittel, mittlerer Boden",
+      "mittel, schwerer Boden"
+    ]
+  },
+  "Sojabohnen - Speisequalität": {
+    "name": "Sojabohnen - Speisequalität",
+    "tillage": [
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "mittel, mittlerer Boden"
+    ]
+  },
+  "Sommerzwischenfrucht Ölrettich (Biogasproduktion)": {
+    "name": "Sommerzwischenfrucht Ölrettich (Biogasproduktion)",
+    "tillage": [
+      "Kreiseleggen, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Sommerzwischenfrucht Sorghum (Biogasproduktion)": {
+    "name": "Sommerzwischenfrucht Sorghum (Biogasproduktion)",
+    "tillage": [
+      "Kreiseleggen, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Sorghum (Biogasproduktion)": {
+    "name": "Sorghum (Biogasproduktion)",
+    "tillage": [
+      "nichtwendend, Kreiseleggen, Saat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Sommerzwischenfrucht einjähriges Weidelgras (Biogasproduktion)": {
+    "name": "Sommerzwischenfrucht einjähriges Weidelgras (Biogasproduktion)",
+    "tillage": [
+      "gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Speisekartoffeln": {
+    "name": "Speisekartoffeln",
+    "tillage": [
+      "wendend, beregnet, gezogene Saatbettbereitung",
+      "nichtwendend, Kreiseleggen, Legen",
+      "wendend, gezogene Saatbettbereitung, Legen",
+      "wendend, separierte Beete",
+      "wendend, steinig, gezogene Saatbettbereitung"
+    ],
+    "yield": [
+      "mittel, leichter Boden",
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "mittel, schwerer Boden",
+      "niedrig, leichter Boden",
+      "niedrig, mittlerer Boden"
+    ]
+  },
+  "Sudangrashybrid (Biogasproduktion)": {
+    "name": "Sudangrashybrid (Biogasproduktion)",
+    "tillage": [
+      "nichtwendend, Kreiseleggen, Saat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Stärkekartoffeln": {
+    "name": "Stärkekartoffeln",
+    "tillage": [
+      "wendend, gezogene Saatbettbereitung, Legen",
+      "nichtwendend, Kreiseleggen, Legen"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, leichter Boden",
+      "mittel, mittlerer Boden",
+      "mittel, schwerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Veredelungskartoffeln": {
+    "name": "Veredelungskartoffeln",
+    "tillage": [
+      "nichtwendend, gezogene Saatbettbereitung, Legen",
+      "nichtwendend, Kreiseleggen, Legen",
+      "wendend, gezogene Saatbettbereitung, Legen"
+    ],
+    "yield": [
+      "niedrig, leichter Boden",
+      "hoch, mittlerer Boden",
+      "mittel, leichter Boden",
+      "mittel, mittlerer Boden",
+      "mittel, schwerer Boden"
+    ]
+  },
+  "Weiden (thermische Nutzung), 21 Jahre, Erntejahr": {
+    "name": "Weiden (thermische Nutzung), 21 Jahre, Erntejahr",
+    "tillage": [
+      "4-jähriger Umtrieb, Häcksler",
+      "2-jähriger Umtrieb, Häcksler"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Weiden (thermische Nutzung), 21 Jahre, Anpflanzjahr": {
+    "name": "Weiden (thermische Nutzung), 21 Jahre, Anpflanzjahr",
+    "tillage": [
+      "gezogene Saatbettbereitung, Pflanzen"
+    ],
+    "yield": [
+      "mittel, mittlerer Boden"
+    ]
+  },
+  "Weiden (thermische Nutzung), 21 Jahre, letztes Jahr mit Rekultivierung": {
+    "name": "Weiden (thermische Nutzung), 21 Jahre, letztes Jahr mit Rekultivierung",
+    "tillage": [
+      "2-jähriger Umtrieb, Häcksler",
+      "4-jähriger Umtrieb, Häcksler"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Wintergerste - Futtergerste": {
+    "name": "Wintergerste - Futtergerste",
+    "tillage": [
+      "nichtwendend, Kreiseleggensaat",
+      "Direktsaat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, leichter Boden",
+      "mittel, mittlerer Boden",
+      "mittel, schwerer Boden",
+      "niedrig, leichter Boden",
+      "niedrig, mittlerer Boden"
+    ]
+  },
+  "Winterraps": {
+    "name": "Winterraps",
+    "tillage": [
+      "Direktsaat",
+      "nichtwendend, Kreiseleggensaat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, leichter Boden",
+      "mittel, mittlerer Boden",
+      "mittel, schwerer Boden",
+      "niedrig, leichter Boden",
+      "niedrig, mittlerer Boden"
+    ]
+  },
+  "Winterraps (Rapsöl)": {
+    "name": "Winterraps (Rapsöl)",
+    "tillage": [
+      "wendend, gezogene Saatbettbereitung, Saat",
+      "nichtwendend, Kreiseleggensaat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Winterroggen - Korn und Stroh (thermische Nutzung)": {
+    "name": "Winterroggen - Korn und Stroh (thermische Nutzung)",
+    "tillage": [
+      "nichtwendend, Kreiseleggensaat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Winterroggen - Ganzpflanzensilage (Biogasproduktion)": {
+    "name": "Winterroggen - Ganzpflanzensilage (Biogasproduktion)",
+    "tillage": [
+      "nichtwendend, Kreiseleggensaat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Winterroggen - Mahl- und Brotroggen": {
+    "name": "Winterroggen - Mahl- und Brotroggen",
+    "tillage": [
+      "nichtwendend, Kreiseleggensaat",
+      "Direktsaat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, leichter Boden",
+      "mittel, mittlerer Boden",
+      "mittel, schwerer Boden",
+      "niedrig, leichter Boden",
+      "niedrig, mittlerer Boden"
+    ]
+  },
+  "Wintertriticale - Futtertriticale": {
+    "name": "Wintertriticale - Futtertriticale",
+    "tillage": [
+      "nichtwendend, Kreiseleggensaat",
+      "Direktsaat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, leichter Boden",
+      "mittel, mittlerer Boden",
+      "mittel, schwerer Boden",
+      "niedrig, leichter Boden",
+      "niedrig, mittlerer Boden"
+    ]
+  },
+  "Winterroggen- und Zottelwickengemenge - Ganzpflanzensilage (Biogasproduktion)": {
+    "name": "Winterroggen- und Zottelwickengemenge - Ganzpflanzensilage (Biogasproduktion)",
+    "tillage": [
+      "nichtwendend, gezogene Saatbettbereitung, Saat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Wintertriticale - Ganzpflanzensilage (Biogasproduktion)": {
+    "name": "Wintertriticale - Ganzpflanzensilage (Biogasproduktion)",
+    "tillage": [
+      "wendend, gezogene Saatbettbereitung, Saat",
+      "nichtwendend, Kreiseleggensaat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Wintertriticale - Korn und Stroh (thermische Nutzung)": {
+    "name": "Wintertriticale - Korn und Stroh (thermische Nutzung)",
+    "tillage": [
+      "nichtwendend, Kreiseleggensaat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Winterweizen - Ganzpflanzensilage (Biogasproduktion)": {
+    "name": "Winterweizen - Ganzpflanzensilage (Biogasproduktion)",
+    "tillage": [
+      "nichtwendend, Kreiseleggensaat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Winterweizen - Brotweizen": {
+    "name": "Winterweizen - Brotweizen",
+    "tillage": [
+      "Direktsaat",
+      "nichtwendend, Kreiseleggensaat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, leichter Boden",
+      "mittel, mittlerer Boden",
+      "mittel, schwerer Boden",
+      "niedrig, leichter Boden",
+      "niedrig, mittlerer Boden"
+    ]
+  },
+  "Winterweizen - Korn und Stroh (thermische Nutzung)": {
+    "name": "Winterweizen - Korn und Stroh (thermische Nutzung)",
+    "tillage": [
+      "wendend, gezogene Saatbettbereitung, Saat",
+      "nichtwendend, Kreiseleggensaat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Winterweizen - Korn (Bioethanolproduktion)": {
+    "name": "Winterweizen - Korn (Bioethanolproduktion)",
+    "tillage": [
+      "nichtwendend, Kreiseleggensaat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Winterweizen Ganzpflanzensilage": {
+    "name": "Winterweizen Ganzpflanzensilage",
+    "tillage": [
+      "Direktsaat",
+      "nichtwendend, Kreiseleggensaat",
+      "wendend, gezogene Saatbettbereitung, Saat",
+      "wendend, gezogene Saatbettbereitung, Saat, eigenmech"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, leichter Boden",
+      "mittel, mittlerer Boden",
+      "mittel, schwerer Boden",
+      "niedrig, leichter Boden",
+      "niedrig, mittlerer Boden"
+    ]
+  },
+  "Zuckerrüben": {
+    "name": "Zuckerrüben",
+    "tillage": [
+      "wendend, gezogene Saatbettbereitung, Saat",
+      "nichtwendend, Kreiseleggen, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, leichter Boden",
+      "mittel, mittlerer Boden",
+      "mittel, schwerer Boden",
+      "niedrig, leichter Boden",
+      "niedrig, mittlerer Boden",
+      "sehr niedrig, leichter Bo",
+      "sehr niedrig, m. Boden"
+    ]
+  },
+  "Winterzwischenfrucht Grünschnittroggen (Biogasproduktion)": {
+    "name": "Winterzwischenfrucht Grünschnittroggen (Biogasproduktion)",
+    "tillage": [
+      "nichtwendend, Kreiseleggensaat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Zuckerrüben (Bioethanolproduktion)": {
+    "name": "Zuckerrüben (Bioethanolproduktion)",
+    "tillage": [
+      "wendend, gezogene Saatbettbereitung, Saat",
+      "nichtwendend, Kreiseleggen, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Zuckerrüben (45cm Reihenabstand)": {
+    "name": "Zuckerrüben (45cm Reihenabstand)",
+    "tillage": [
+      "nichtwendend, Kreiseleggen, Saat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, leichter Boden",
+      "mittel, mittlerer Boden",
+      "mittel, schwerer Boden",
+      "niedrig, leichter Boden",
+      "niedrig, mittlerer Boden"
+    ]
+  },
+  "Winterzwischenfrucht Weidelgras (Biogasproduktion)": {
+    "name": "Winterzwischenfrucht Weidelgras (Biogasproduktion)",
+    "tillage": [
+      "nichtwendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Winterzwischenfrucht Landsberger Gemenge (Biogasproduktion)": {
+    "name": "Winterzwischenfrucht Landsberger Gemenge (Biogasproduktion)",
+    "tillage": [
+      "nichtwendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Zuckerrüben (Biogasproduktion)": {
+    "name": "Zwiebeln",
+    "tillage": [
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "mittel, mittlerer Boden"
+    ]
+  },
+  "Zwischenfrucht Perserklee": {
+    "name": "Zwischenfrucht Perserklee",
+    "tillage": [
+      "Gründüngung, ohne Futternutzung"
+    ],
+    "yield": [
+      "mittel, leichter Boden",
+      "mittel, mittlerer Boden",
+      "mittel, schwerer Boden"
+    ]
+  },
+  "Zwischenfrucht Ölrettich": {
+    "name": "Zwischenfrucht Ölrettich",
+    "tillage": [
+      "Gründüngung, ohne Futternutzung"
+    ],
+    "yield": [
+      "mittel, leichter Boden",
+      "mittel, mittlerer Boden",
+      "mittel, schwerer Boden"
+    ]
+  },
+  "Zwischenfrucht Phacelia": {
+    "name": "Zwischenfrucht Phacelia",
+    "tillage": [
+      "Gründüngung, ohne Futternutzung"
+    ],
+    "yield": [
+      "mittel, leichter Boden",
+      "mittel, mittlerer Boden",
+      "mittel, schwerer Boden"
+    ]
+  },
+  "Zwischenfrucht Senf": {
+    "name": "Zwischenfrucht Senf",
+    "tillage": [
+      "Gründüngung, ohne Futternutzung"
+    ],
+    "yield": [
+      "mittel, leichter Boden",
+      "mittel, mittlerer Boden",
+      "mittel, schwerer Boden"
+    ]
+  },
+  "Möhren": {
+    "name": "Möhren",
+    "tillage": [
+      "Kreiseleggen, Saat",
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "hoch, mittlerer Boden",
+      "mittel, mittlerer Boden",
+      "niedrig, leichter Boden"
+    ]
+  },
+  "Zwiebeln": {
+    "name": "Zwiebeln",
+    "tillage": [
+      "wendend, gezogene Saatbettbereitung, Saat"
+    ],
+    "yield": [
+      "mittel, mittlerer Boden"
+    ]
+  }
+}
