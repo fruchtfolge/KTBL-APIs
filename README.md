@@ -1,7 +1,7 @@
 # KTBL Database - Missing APIs
 
 The KTBL Database provides information about time consumption, machine costs and diesel costs for selected production processes within agriculture.
-Currently, there is no native API implemented on their site. This repo provides a server aimed at filling that gap.
+Currently, there is no native API implemented on their site. This repo provides a Node JS server aimed at filling that gap.
 
 ## Methods
 
