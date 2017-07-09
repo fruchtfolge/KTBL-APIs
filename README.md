@@ -8,20 +8,20 @@ Currently, there is no native API implemented on their site. This repo provides 
 ### ```/crop_procedures```
 
 Return an array with all standard working procedures defined for a given crop / cropping system combination
-Minimum query parameters:
-```crop``` The crop you want information about -> see CropObject.json for options
-```system``` The cropping system you want information about -> see CropObject.json for options
+Minimum query parameters:  
+```crop``` The crop you want information about -> see CropObject.json for options  
+```system``` The cropping system you want information about -> see CropObject.json for options  
 
-Optional query parameters:
-```size``` Plot sizes in ha -> 1,2,5,10,20,40,80 ha
-```yield``` Yield parameters available for the specified crop -> see CropObject.json for options
-```mechanisation``` Mechanisation utilised -> 45, 67, 83, 102, 120, 200, 230 kW
-```distance``` Distances in km -> 1,2,3,4,5,6,10,15,20,30 km 
+Optional query parameters:  
+```size``` Plot sizes in ha -> 1,2,5,10,20,40,80 ha  
+```yield``` Yield parameters available for the specified crop -> see CropObject.json for options  
+```mechanisation``` Mechanisation utilised -> 45, 67, 83, 102, 120, 200, 230 kW  
+```distance``` Distances in km -> 1,2,3,4,5,6,10,15,20,30 km  
 
-Example request:
+Example request:  
 ```http://localhost:8000/crop_procedures?crop=Ackergras+-+Anwelksilage&system=Ballen```
 
-returns:
+returns:  
 ```json	
 [{
 	"frequency": 0.2,
@@ -48,21 +48,21 @@ returns:
 
 ### ```/procedure```
 
-Return information on single working procedure. See machCombiObject.json for available combinations and legal query parameters.
-Minimum query parameters:
-```procedureGroup```
-```procedure```
-```machCombination```
-```size```
-```resistance```
-```distance```
-```amount```
-```workingWidth```
+Return information on single working procedure. See machCombiObject.json for available combinations and legal query parameters.  
+Minimum query parameters:  
+```procedureGroup```  
+```procedure```  
+```machCombination```  
+```size```  
+```resistance```  
+```distance```  
+```amount```  
+```workingWidth```  
 
-Example request:
+Example request:  
 ```http://localhost:8000/procedure?procedureGroup=1&procedure=11&machCombination=518&size=1&resistance=leicht&distance=1&amount=0.0&workingWidth=1.8```
 
-returns: 
+returns:  
 ```json	
 {
 	"procedure": "11",
