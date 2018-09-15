@@ -21,7 +21,8 @@ ktbl.procedure({
 ktbl.cropProcedures({
   'crop': 'Ackergras - Anwelksilage',
   'type': 'konventionell/integriert',
-  'system': 'Ballen'
+  'system': 'Ballen',
+  'getIds': true
 })
 .then(res => {
   console.log(res)

@@ -120,10 +120,10 @@ module.exports = function cropProcedures(options) {
 
         // if option is set, get machine id's for each working step
         if (options.getIds) {
-          const workingSteps = context.find('#avForm_checkedArbeitsvorgaenge')
+          const workingSteps = context.find('#avForm_checkedArbeitsvorgaenge').map((workingStep,index) => {return index})
 
-          function getDetails(key,index,callback) {
-            data.workingStep = index.toString()
+          function getDetails(iteratee,callback) {
+            data.workingStep = iteratee.toString()
               osmosis
               .post('https://daten.ktbl.de/vrpflanze/prodverfahren/editAv', {
                 'checkedArbeitsvorgaenge': data.workingStep.toString(),
@@ -143,7 +143,14 @@ module.exports = function cropProcedures(options) {
 
 
                 if (!procedureNameNode){
-                  return callback()
+                  console.log('unfinished', index)
+                  q.push(index, (err) => {
+                    if (err) reject(err)
+                  })
+                  return setTimeout(() => {
+                    return callback()
+                  }, 2000);
+
                 }
 
                 const procedure = procedureNameNode.selectedOptions[0].text
@@ -162,17 +169,24 @@ module.exports = function cropProcedures(options) {
                   'procedureGroupId': procedureGroupId,
                   'machCombinationId': machCombinationId
                 }, results[index])
-                console.log('here1')
-                callback()
+                return callback()
               })
           }
 
-          return async.eachOfLimit(workingSteps,1,getDetails,(err) => {
-            if (err) reject(err)
-            else resolve(results)
+          const q = async.queue(getDetails, 1)
+
+          q.drain = () => {
+            return resolve(results)
+          }
+
+          results.forEach((workingStep,index) => {
+            q.push(index, (err) => {
+              if (err) return reject(err)
+            })
           })
+
         } else {
-          resolve(results)
+          return resolve(results)
         }
       })
   })
