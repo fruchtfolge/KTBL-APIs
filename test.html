@@ -1,47 +1,10 @@
 <html url="https://daten.ktbl.de/vrpflanze/arbeitsvorgang/modify.action"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link rel="stylesheet" type="text/css" href="/vrpflanze/css/styleguide.css">
-		<link type="text/css" href="/vrpflanze/template/themes/ktbltheme/jquery-ui.css" rel="Stylesheet">
-		<link rel="stylesheet" type="text/css" href="/vrpflanze/css/jquery.tooltip.css">
+		<link href="/vrpflanze/favicon.ico" rel="shortcut icon">
+		<link rel="icon" href="/vrpflanze/favicon.ico" type="image/icon">
 		<script type="text/javascript" src="/vrpflanze/js/jquery-1.4.2.min.js"></script>
-		<script type="text/javascript" src="/vrpflanze/js/jquery-ui-1.8.custom.min.js"></script>
-		<script type="text/javascript" src="/vrpflanze/js/jquery.tooltip.pack.js"></script>
-		<script type="text/javascript" src="/vrpflanze/js/jquery.cookie.js"></script>
 		<script type="text/javascript" src="/vrpflanze/js/checkbox_s2.js"></script>
-		<script type="text/javascript" src="/vrpflanze/js/showhide.js"></script>
-		<script type="text/javascript" src="/vrpflanze/js/jquery.scrollTo-min.js"></script>
-		<script type="text/javascript" src="/vrpflanze/js/jquery.localscroll-1.2.7-min.js"></script>
-		<script type="text/javascript" src="/vrpflanze/js/jquery.blockUI.js"></script>
-		<script type="text/javascript" src="/vrpflanze/js/init.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				
-                var hash = '#' + '';
-                document.location.hash = hash;
-                $.scrollTo($(hash),200);
-
-                // setFavicon
-                var faviconLnk = '' + '/vrpflanze/favicon.ico';
-              	var link = $('link[type=image/x-icon]').remove().attr("href");
-       			$('<link href="'+ faviconLnk +'" rel="shortcut icon" type="image/x-icon" />').appendTo('head');
-
-       			$("#localtabs").tabs( {
-       				cookie : {
-       					expires : 0
-       				}
-       			});
-       			
-				// disable tab falls noch kein Ergebnis.
-				
-				// org - warum ist der erste selected ?!?
-                var result = 'de.ktbl.xarbeitsgaenge.model.produktionsverfahren.ResultWrapperProdVerfahren@79cf1444';
-                if (result == '' || result == null) {
-                	$("#localtabs").tabs("option", "selected", 0);
-	                $("#localtabs").tabs("option", "disabled", [1, 2] );
-                }
-                
-            });
-       </script>
 		<title>
 			
 			
@@ -50,7 +13,6 @@
 		</title>
 	</head>
 	<body id="bodyTag">
-		<a id="start"></a>
 		<div id="wrap">
 			<div id="header">
 				
@@ -85,27 +47,13 @@
 						<li>
 							
 							
-								<div class="Active">
+							
+								<div>
 									Produktions-
 verfahren
 								</div>
 							
-							
 						</li>
-						
-							<li>
-								<ul>
-									<li>
-										
-										
-											<div class="Active">
-												Arbeitsvorgang
-											</div>
-										
-										
-									</li>
-								</ul>
-							</li>
 						
 					</ul>
 				</li>	
@@ -134,606 +82,49 @@ verfahren
 </div>
 			</div>
 			<div id="body">
-				<div style="display:none">	
-					<img src="/vrpflanze/images/ajax-loader-indicator.gif">
-				</div>
-				<div style="padding:0;margin:15px;" class="ueberschrift">
+				<div style="padding: 10px 10px 4px;" class="ueberschrift">
 					<div style="float: left;">
-						Arbeitsvorgang auswählen
+						
 					</div>
 					<div style="float: right; font-size: 80%;">
-						
   				  	</div>
 					<div class="clearBoth"></div>
 				</div>
-				<div>
-					
-				</div>
-				<div>
-					
-<div class="infokasten">
-	<div class="infokastenOben">
-		<div>
-			<input id="anleitungImgId" type="image" src="/vrpflanze/images/pfeil_unten.gif" class="infokastenPfeil"> 
-			<font class="infokastenObenSchlagwort">ANLEITUNG | </font>
-		</div>
-	</div>
-	<div class="infokastenUnten" style="display: none;" id="anleitungShort">
-	</div>
-	<div class="infokastenUnten" style="display: block;" id="anleitungLong">
-		In dieser Ansicht können Sie Arbeitsvorgänge ersetzen oder das Produktionsverfahren mit weiteren Arbeitsvorgängen ergänzen. In der Spezifikation sind die Schlaggröße, die Hof-Feld-Entfernung und das Ertragsniveau auf die Werte des Produktionsverfahrens festgesetzt. Sie können eine andere Maschinenkombination oder ein anderes Arbeitsverfahren, bei Bedarf auch aus einer anderen Gruppe von Arbeitsverfahren, auswählen und in das Produktionsverfahren eintauschen. Bei einigen Arbeitsverfahren können auch die Menge oder die Arbeitsbreite variiert werden.
-	</div> 
-</div>
-				</div>
-				<div style="padding: 25px 5px 5px 25px;">
-					<noscript>
-						<div class="errorMessage">
-							<div class="errorHeader">FEHLER | JAVASCRIPT DEAKTIVIERT</div>
-							<div class="errorText">Sie haben in ihrem Browser Javascript deaktiviert. Bitte aktivieren Sie javascript in ihrem Browser.</div>
-						</div>
-					</noscript>
-				</div>
 				
 
-<div class="aktionskasten">
-	<a id="auswahl" href="/vrpflanze/arbeitsvorgang/modify.action"></a>
-	<div class="aktionskastenOben">
-		<font class="aktionskastenObenSchlagwort">
-			AUSWAHL
-		</font>
-	</div>
-	<div class="aktionskastenUnten">
-		<table>
-			<colgroup>
-				<col style="width: 400px;">
-				<col style="width: 20px;">
-				<col style="width: 360px;">
-			</colgroup>
-			<tbody><tr>
-				<td valign="top">
-					<table class="schrittkasten" style="width: 100%;">
-						<colgroup>
-							<col width="100%">
-						</colgroup>
-						<tbody><tr class="schrittkasten">
-							<td class="schrittkastenOben">
-								<div class="schrittkastenObenText">
-									1.
-								</div>
-								<div class="schrittkastenObenZahl">
-									Arbeitsvorgang
-								</div>
-							</td>
-						</tr>
-						<tr class="schrittkasten">
-							<td class="schrittkastenUnten" style="height: 145px" valign="top">
-								<table style="width:100%">
-									<tbody><tr>
-										<td>
-											Gruppe 
-										</td>
-									</tr>
-									<tr> 
-										<td>
-											
-											
-												<form id="loadArbeitsverfahren" name="loadArbeitsverfahren" action="/vrpflanze/arbeitsvorgang/loadArbeitsverfahren.action" method="post">
-													<select name="selectedGruppe" id="loadArbeitsverfahren_selectedGruppe" class="headoption" style="width:100%;display:inline" onchange="blockUI();submit();">
-    <option value="-1">[Gruppe]</option>
-    <option value="3">Bestellung</option>
-    <option value="23">Bewässerung</option>
-    <option value="1" selected="">Bodenbearbeitung</option>
-    <option value="16">Bonitur und Bodenprobenahme</option>
-    <option value="2">Düngung</option>
-    <option value="11">Futterbergung und -einlagerung</option>
-    <option value="6">Futterwerbung</option>
-    <option value="39">Gemüse - Bodenbearbeitung</option>
-    <option value="338">Gemüse - Düngung</option>
-    <option value="37">Gemüse - Pflege</option>
-    <option value="36">Gemüse säen und pflanzen</option>
-    <option value="9">Gemüseernte und -aufbereitung</option>
-    <option value="7">Kartoffelernte</option>
-    <option value="5">Mähdrusch</option>
-    <option value="21">Nawaro-Ernte</option>
-    <option value="4">Pflege</option>
-    <option value="19">Strohbergung</option>
-    <option value="20">Transport zum Kunden</option>
-    <option value="10">Zucker-, Futterrübenernte</option>
 
-
-</select>
-
-
-												</form>
-
-
-
-
-											
-										</td>
-									</tr>
-									<tr>
-										<td>
-											Arbeitsverfahren 
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<a id="ergebnis" href="/vrpflanze/arbeitsvorgang/modify.action"></a>
-											
-											
-												<form id="loadMaschinenkombinationen" name="loadMaschinenkombinationen" action="/vrpflanze/arbeitsvorgang/loadMaschinenkombinationen.action" method="post"> 	
-													<select name="selectedArbeitsverfahren" id="loadMaschinenkombinationen_selectedArbeitsverfahren" class="headoption" style="width:100%;display:inline" onchange="blockUI();submit();">
-    <option value="-1">[Arbeitsverfahren]</option>
-    <option value="11">Eggen mit Federzinkenegge (angebaut)</option>
-    <option value="1641">Eggen mit Federzinkenegge (aufgesattelt) mit Nachläufer</option>
-    <option value="3442">Eggen mit Kettenscheibenegge</option>
-    <option value="5">Eggen mit Kreiselegge</option>
-    <option value="12">Eggen mit Kurzscheibenegge</option>
-    <option value="19">Eggen mit Kurzscheibenegge, schräg (30°)</option>
-    <option value="16">Eggen mit Ringschneide, schräg (30°)</option>
-    <option value="18">Eggen mit Saatbettkombination, angebaut</option>
-    <option value="192">Eggen mit Saatbettkombination, angebaut, doppelte Überfahrt</option>
-    <option value="23">Eggen mit Saatbettkombination, aufgesattelt</option>
-    <option value="29">Eggen mit Saatbettkombination, aufgesattelt, doppelte Überfahrt</option>
-    <option value="9">Eggen mit Scheibenegge, flach</option>
-    <option value="185">Eggen mit Scheibenegge, schräg (30°), flach</option>
-    <option value="1422">Eggen mit Scheibenegge, schräg (30°), tief</option>
-    <option value="1421">Eggen mit Scheibenegge, tief</option>
-    <option value="10">Eggen mit Spatenrollegge</option>
-    <option value="187">Eggen mit Spatenrollegge, schräg (30°)</option>
-    <option value="14">Eggen mit Tandemrotor, Dyna-Drive</option>
-    <option value="25">Eggen mit Tandemrotor, Dyna-Drive, schräg 30°</option>
-    <option value="6">Eggen mit Zinkenrotor</option>
-    <option value="1">Fräsen</option>
-    <option value="176">Fräsen mit Beetfräse</option>
-    <option value="177">Kartoffeln, Beetformen</option>
-    <option value="181">Kartoffeln, Beetseparierung</option>
-    <option value="7">Pflügen mit Beetpflug</option>
-    <option value="8" selected="">Pflügen mit Drehpflug</option>
-    <option value="182">Pflügen mit Drehpflug, Packer</option>
-    <option value="21">Pflügen mit Drehpflug und Steinsicherung</option>
-    <option value="2">Reihenfräsen</option>
-    <option value="180">Reihenfräsen in Dammkultur</option>
-    <option value="186">Schälen mit Schäl-Drehpflug (mittel)</option>
-    <option value="191">Schälen mit Schäl-Drehpflug (mittel, schräg 30°)</option>
-    <option value="190">Schälen mit Schäl-Drehverstellpflug (mittel)</option>
-    <option value="27">Schälen mit Schäl-Drehverstellpflug (mittel, schräg 30°)</option>
-    <option value="13">Schälen mit Stoppelhobel (flach)</option>
-    <option value="24">Schälen mit Stoppelhobel (flach, schräg 30°)</option>
-    <option value="184">Schälen mit Stoppelhobel (mittel)</option>
-    <option value="26">Schälen mit Stoppelhobel (mittel, schräg 30°)</option>
-    <option value="183">Schälen mit Stoppelhobel (tief)</option>
-    <option value="189">Schälen mit Stoppelhobel (tief, schräg 30°)</option>
-    <option value="175">Stoppelgrubbern, flach</option>
-    <option value="22">Stoppelgrubbern flach, schräg 30°</option>
-    <option value="4">Stoppelgrubbern tief</option>
-    <option value="3">Tiefgrubbern</option>
-    <option value="68">Walzen, Saatbeet oder Ansaat</option>
-    <option value="17">1.Stoppelgrubbern flach, schräg (30°)</option>
-    <option value="15">2.Stoppelgrubbern tief, schräg (30°)</option>
-
-
-</select>
-
-
-												</form>
-
-
-
- 
-											
-										</td>
-									</tr>
-									<tr>
-										<td>
-											Maschinenkombination 
-										</td>
-									</tr>
-									<tr>
-										<td>
-											
-											
-												<form id="loadResult" name="loadResult" action="/vrpflanze/arbeitsvorgang/loadResult.action" method="post"> 	
-													<select name="selectedMaschinenkombination" id="loadResult_selectedMaschinenkombination" class="headoption" style="width:100%;display:inline" onchange="blockUI();submit();">
-    <option value="-1">[Maschinen]</option>
-    <option value="775">10 Schare 3,5 m, aufgesattelt; Knicklenker, 275 kW</option>
-    <option value="1122">10 Schare, 3,5 m, aufgesattelt; Raupentraktor, 275 kW</option>
-    <option value="345">10 Schare, 3,5 m, aufgesattelt; 176 kW</option>
-    <option value="895">10 Schare 3,5 m, aufgesattelt; 200 kW</option>
-    <option value="6468">12 Schare, 4,2 m; 233 kW</option>
-    <option value="337">2 Schare, 0,7 m, angebaut; 37 kW</option>
-    <option value="739">2 Schare, 0,7 m, angebaut; 45 kW</option>
-    <option value="740">2 Schare, 0,7 m, angebaut; 54 kW</option>
-    <option value="1109">3 Schare, 1,05 m, angebaut; 102 kW</option>
-    <option value="1108">3 Schare, 1,05 m, angebaut; 45 kW</option>
-    <option value="896">3 Schare, 1,05 m, angebaut; 54 kW</option>
-    <option value="743">3 Schare, 1,05 m, angebaut; 67 kW</option>
-    <option value="748">4 Schare, 1,4 m, angebaut; 102 kW</option>
-    <option value="1111">4 Schare, 1,4 m, angebaut; 138 kW</option>
-    <option value="749">4 Schare, 1,4 m, angebaut; 157 kW</option>
-    <option value="750">4 Schare, 1,4 m, angebaut; 176 kW</option>
-    <option value="339" selected="">4 Schare, 1,4 m, angebaut; 67 kW</option>
-    <option value="747">4 Schare, 1,4 m, angebaut; 83 kW</option>
-    <option value="18021">5 Schare, 1,75 m, angebaut; 102 kW</option>
-    <option value="18022">5 Schare, 1,75 m, angebaut; 120 kW</option>
-    <option value="18023">5 Schare, 1,75 m, angebaut; 157 kW</option>
-    <option value="18024">5 Schare, 1,75 m, angebaut; 176 kW</option>
-    <option value="18025">5 Schare, 1,75 m, angebaut; 200 kW</option>
-    <option value="18019">5 Schare, 1,75 m, angebaut; 83 kW</option>
-    <option value="752">5 Schare, 1,75 m, aufgesattelt; 102 kW</option>
-    <option value="753">5 Schare, 1,75 m, aufgesattelt; 120 kW</option>
-    <option value="1113">5 Schare, 1,75 m, aufgesattelt; 157 kW</option>
-    <option value="754">5 Schare, 1,75 m, aufgesattelt; 176 kW</option>
-    <option value="340">5 Schare, 1,75 m, aufgesattelt; 83 kW</option>
-    <option value="341">6 Schare, 2,1 m, aufgesattelt; 102 kW</option>
-    <option value="757">6 Schare, 2,1 m, aufgesattelt; 120 kW</option>
-    <option value="758">6 Schare, 2,1 m, aufgesattelt; 138 kW</option>
-    <option value="1115">6 Schare, 2,1 m, aufgesattelt; 200 kW</option>
-    <option value="764">7 Schare, 2,45 m, aufgesattelt; Knicklenker, 275 kW</option>
-    <option value="342">7 Schare, 2,45 m, aufgesattelt; 120 kW</option>
-    <option value="762">7 Schare, 2,45 m, aufgesattelt; 138 kW</option>
-    <option value="763">7 Schare, 2,45 m, aufgesattelt; 157 kW</option>
-    <option value="1117">7 Schare, 2,45 m, aufgesattelt; 233 kW</option>
-    <option value="1119">8 Schare, 2,8 m, aufgesattelt; Knicklenker, 275 kW</option>
-    <option value="343">8 Schare, 2,8 m, aufgesattelt; 138 kW</option>
-    <option value="630">8 Schare, 2,8 m, aufgesattelt; 157 kW</option>
-    <option value="767">8 Schare, 2,8 m, aufgesattelt; 176 kW</option>
-    <option value="344">9 Schare, 3,15 m, aufgesattelt; 157 kW</option>
-    <option value="772">9 Schare, 3,15 m, aufgesattelt; 176 kW</option>
-    <option value="773">9 Schare, 3,15 m, aufgesattelt; 200 kW</option>
-
-
-</select>
-
-
-												</form>
-
-
-
- 
-											
-										</td>
-									</tr>
-								</tbody></table>
-							</td>
-						</tr>
-					</tbody></table>
-				</td> 
-				<td>&nbsp;</td>
+<div align="center">
+	<table width="600" align="center" border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td>
+				<h2>Schwerer Ausnahmefehler in der Anwendung</h2>
+				<br>
+				<p>
+					Sehr zu unserem Bedauern ist ein unvorhersehbarer Fehler aufgetreten. Bitte versuchen Sie es erneut oder wenden Sich an uns unter <a href="mailto:webmaster@ktbl.de?subject=FEHLER" verfahrensrechner="" pflanze="" zum="" fehler:="">webmaster@ktbl.de</a>, falls der Fehler weiterhin auftritt, damit wir ihn schnellstmöglichst beheben können.<br><br>Wir entschuldigen uns für die Unannehmlichkeit. <br><br><a href="mailto:webmaster@ktbl.de?subject=FEHLER" verfahrensrechner="" pflanze="" zum="" fehler:="">Fehlerbericht senden</a>
+				</p>
 				
-				<td>
-					<table class="schrittkasten" style="width: 100%;">
-						<colgroup>
-							<col width="100%">
-						</colgroup>
-						<tbody><tr class="schrittkasten">
-							<td class="schrittkastenOben">
-								<div class="schrittkastenObenText">
-									2.
-								</div>
-								<div class="schrittkastenObenZahl">
-									Spezifikation
-								</div>
-							</td>
-						</tr>
-						<tr class="schrittkasten">
-							<td class="schrittkastenUnten" style="height: 145px" valign="top">
-								<table>
-									<form id="refineResult" name="refineResult" action="/vrpflanze/arbeitsvorgang/refineResult.action" method="post"></form>
-										
-										<tbody><tr>
-											<td>
-												Schlaggröße [ha] 
-											</td>
-											<td>
-												
-													2
-												
-											</td>
-										</tr>
-										
-										<tr>
-											<td>
-												Ertragsniveau 
-											</td>
-											<td>
-												
-													mittel, mittlerer Boden
-												
-											</td>
-										</tr>
-										
-										<tr>
-											<td>
-												Entfernung Hof-Feld [km] 
-											</td>
-											<td>
-												
-													2
-												
-											</td>
-										</tr>
-										
-										<tr>
-											<td>
-												
-													Menge [-/ha]
-												
-												
-											</td>
-											<td>
-												
-												
-													<select name="selectedMenge" disabled="" id="refineResult_selectedMenge" style="width:70px;" onchange="blockUI();submit();">
-    <option value="0.0" selected="">0.0</option>
-
-
-</select>
-
-
-												 
-											</td>
-										</tr>
-										
-										<tr>
-											<td>
-												Arbeitsbreite [m]
-											</td>
-											<td>
-												
-													<select disabled="" style="width:70px;"></select>
-												
-												 
-											</td>
-										</tr>
-									
-
-
-
-
-								</tbody></table>
-							</td>
-						</tr>
-					</tbody></table>
-				</td> 
-			</tr>
-		</tbody></table>
-	</div> 
-	
-	
-</div>
-
-
-<div class="ergebniskasten">
-	<div class="ergebniskastenOben">
-		<font class="ergebniskastenObenSchlagwort">ERGEBNIS</font>
-	</div>
-	<div class="ergebniskastenUntenTabelle">
-		<div class="reiterZwischenzeile">&nbsp;</div>
-		
-		
-			
-
-
-
-
-<table class="tabelle" cellspacing="0px" width="100%">
-	<colgroup>
-		<col class="left" valign="middle" width="10px">
-		<col class="left" valign="middle" width="10px">
-		<col class="left" valign="middle" width="260px">
-		<col class="left" valign="middle" width="60px">
-		<col class="left" valign="middle" width="60px">
-		<col class="right" valign="middle" width="40px">
-		<col class="left" valign="middle" width="20px">
-		<col class="left" valign="middle" width="20px">
-		<col class="left" valign="middle" width="20px">
-		<col class="left" valign="middle" width="20px">
-		<col class="left" valign="middle" width="20px">
-		<col class="left" valign="middle" width="20px">
-	</colgroup>
-	<tbody><tr>
-		<td class="tabelleKopfUo left" rowspan="3">
-			Häufigkeit
-		</td>
-		<td class="tabelleKopfUo center" rowspan="2" colspan="2">
-			Arbeitsvorgang
-		</td>
-		<td class="tabelleKopfUo center" rowspan="2">
-			Menge
-		</td>
-		<td class="tabelleKopfUo center" colspan="1" rowspan="2">
-			Arbeitszeit-<br>bedarf
-		</td>
-		<td class="tabelleKopfUo center" rowspan="2">
-			Diesel-<br>bedarf
-		</td>
-		<td class="tabelleKopfUo center" colspan="5">
-			Maschinenkosten
-		</td>
-		<td class="tabelleKopfUo center" rowspan="2">
-			Dienst-<br>leis-<br>tung
-		</td>
-	</tr>
-	<tr>	
-		<td class="tabelleKopfOoUo center">
-			Abschrei-<br>bung 
-		</td>
-		<td class="tabelleKopfOoUo center">
-			Zins-<br>kosten
-		</td>
-		<td class="tabelleKopfOoUo center">
-			Sonsti-<br>ges&nbsp;<img src="/vrpflanze/images/info_corner_white_10.png" title=" - zum Beispiel Versicherung, Gebühren" class="infoIcon">
-		</td>
-		<td class="tabelleKopfOoUo center">
-			Repara-<br>turen
-		</td>
-		<td class="tabelleKopfOoUo center">
-			Betriebs-<br>stoffe
-		</td>
-	</tr>
-	<tr>
-		<td class="tabelleKopfOo center" colspan="2"></td>
-		<td class="tabelleKopfOo center">
-			.../ha
-		</td>
-		<td class="tabelleKopfOo center">
-			h/ha
-		</td>
-		<td class="tabelleKopfOo center">
-			l/ha
-		</td>
-		<td class="tabelleKopfOo center" colspan="6">
-			€/ha
-		</td>
-	</tr>
-	
-		<tr>
-			<td class="tabelleKoerperUo left">
-				0,5
-			</td>
-			<td class="tabelleKoerperUo left">
-				&nbsp;
-			</td>
-			<td class="tabelleKoerperUo left">
-				<b>
-					Pflügen mit Drehpflug
-				</b>
-			</td>
-			<td class="tabelleKoerperUo right">
+				
 				
 			</td>
-			<td class="tabelleKoerperUo right">&nbsp;</td>
-			<td class="tabelleKoerperUo right">&nbsp;</td>
-			<td class="tabelleKoerperUo right">&nbsp;</td>
-			<td class="tabelleKoerperUo right">&nbsp;</td>
-			<td class="tabelleKoerperUo right">&nbsp;</td>
-			<td class="tabelleKoerperUo right">&nbsp;</td>
-			<td class="tabelleKoerperUo right">&nbsp;</td>
-			<td class="tabelleKoerperUo right">&nbsp;</td>
 		</tr>
-			
-		
-			<tr>
-				<td class="tabelleKoerperOoUo left">
-					&nbsp;
-				</td>
-				<td class="tabelleKoerperOoUo left">
-					
-						FA
-					
-				</td>
-				<td class="tabelleKoerperOoUo left">
-					4 Schare, 1,4 m, angebaut; 67 kW
-				</td>
-				<td class="tabelleKoerperOoUo right">&nbsp;</td>
-				<td class="tabelleKoerperOoUo right">
-					
-						0,94
-					
-				</td>
-				<td class="tabelleKoerperOoUo right">
-					
-						11,42
-					
-				</td>
-				<td class="tabelleKoerperOoUo right">
-					
-						6,97
-						
-				</td>
-				<td class="tabelleKoerperOoUo right">
-					
-						2,00
-					
-				</td>
-				<td class="tabelleKoerperOoUo right">
-					
-						0,97
-					
-				</td>
-				<td class="tabelleKoerperOoUo right">
-					
-						12,28
-					
-				</td>
-				<td class="tabelleKoerperOoUo right">
-					
-						8,00
-					
-				</td>
-				<td class="tabelleKoerperOoUo right">
-					
-						0,00
-					
-				</td>
-			</tr>
-		
-	
-</tbody></table>
-<div class="ergebniskastenAktionsbereichPassiv"></div>
-<div class="reiterZwischenzeile">&nbsp;</div>
-
-
-		
-		<div class="ergebniskastenAktionsbereichPassiv"></div>
-		<div class="reiterZwischenzeile">&nbsp;</div>
-	</div>
+	</tbody></table>
 </div>
-<div class="trennlinie">
-	<div class="linkaktionSe">
-		<div class="submitSe">
-			<form id="ok" name="ok" action="/vrpflanze/arbeitsvorgang/ok.action" method="post">
-				<input type="submit" id="ok_0" value="übernehmen" class="submitButton">
-
-			</form>
-
-
-
-
+<div>
+	<div class="trennlinie">
+		<div class="linkaktionSe">
+			<div class="submitSe">
+				<a href="/vrpflanze/home.action">
+			</a>
+</div>
+			<div class="abstandSe">
+				&nbsp;
+			</div>
+			<div class="clearBoth"></div>
 		</div>
-		<div class="abstandSe">
-			<form id="ok" name="ok" action="/vrpflanze/arbeitsvorgang/ok.action" method="post">
-				<input type="submit" id="ok_selectedAction" name="selectedAction" value="Arbeitsvorgang übernehmen und zurück?" class="submitButtonWieText">
-
-			</form>
-
-
-
-
-		</div>
-		<div class="clearBoth"></div>
 	</div>
-	<div class="linkaktionSe">
-		<div class="submitSe">
-			<form id="cancel" name="cancel" action="/vrpflanze/arbeitsvorgang/cancel.action" method="post">
-				<input type="submit" id="cancel_0" value="abbrechen" class="submitButton">
-
-			</form>
-
-
-
-
-		</div>
-		<div class="abstandSe">
-			<form id="cancel" name="cancel" action="/vrpflanze/arbeitsvorgang/cancel.action" method="post">
-				<input type="submit" id="cancel_selectedAction" name="selectedAction" value="Vorgang abbrechen und zurück?" class="submitButtonWieText">
-
-			</form>
-
-
-
-
-		</div>
-			<div class="clearBoth">
-		</div>
 	</div>
 </div>
 
-				<div style="margin:15px;padding:0">
-					Alle Angaben ohne Gewähr.
-				</div>
 			</div>
 			<div id="footer">
 				
@@ -741,7 +132,7 @@ verfahren
 
 
 			</div>
-		</div>
+		
 	
 
 </body></html>

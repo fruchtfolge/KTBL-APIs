@@ -82,6 +82,7 @@ module.exports = function procedure(options) {
             var step = {}
 
             step.description = cells[0].innerHTML.trim()
+            step.name = cells[1].innerHTML.trim()
             step.time = parseFloat(cells[2].innerHTML.trim().replace(',', '.'))
             step.areaOutput = parseFloat(cells[3].innerHTML.trim().replace(',', '.'))
             step.deprec = parseFloat(cells[4].innerHTML.trim().replace(',', '.'))

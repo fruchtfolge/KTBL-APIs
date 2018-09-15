@@ -2,12 +2,13 @@ const osmosis = require('osmosis')
 const libxmljs = require('libxmljs-dom')
 const jsdom = require('jsdom')
 const { JSDOM } = jsdom
+const async = require('async');
 const fs = require('fs');
 
 module.exports = function cropProcedures(options) {
   return new Promise ((resolve,reject) => {
     if (!options || !options.crop || !options.system || !options.type) reject('Minimum options are crop, type, and system')
-
+    let results = []
     osmosis
       .get('https://daten.ktbl.de/vrpflanze/home.action')
       .find('div.aktionskastenUnten > a')
@@ -76,28 +77,10 @@ module.exports = function cropProcedures(options) {
           next(context,data)
         }
       })
-      .post('https://daten.ktbl.de/vrpflanze/prodverfahren/editAv', {
-        'checkedArbeitsvorgaenge': '2',
-        'action:modifyAv': 'Arbeitsgang ersetzen'
-      })
+      // scrape and get machine id's
       .then((context,data,next) => {
-        const dom = new JSDOM(context);
-        fs.writeFileSync('test.html', dom.window.document.documentElement.outerHTML, 'utf-8')
-      })
-      // scrape
-      /*
-      .then((context,data,next) => {
-        const workingSteps = context.find('#avForm_checkedArbeitsvorgaenge')
-        data.workingStep =  0
-        next(context,data)
-
-        //const dom = new JSDOM(context);
-        //fs.writeFileSync('test.html', dom.window.document.documentElement.outerHTML, 'utf-8')
-      })
-        /*
         const dom = new JSDOM(context);
         var rows = dom.window.document.querySelectorAll('#tab-1 > #avForm > div:nth-child(1) > table > tbody > tr:nth-child(n+4)');
-        var workingSteps = [];
 
         for (var i = 0; i < rows.length; i++) {
           var cells = rows[i].getElementsByTagName('td');
@@ -131,12 +114,66 @@ module.exports = function cropProcedures(options) {
               entries.steps.push(step);
               j++;
             }
-            workingSteps.push(entries);
+            results.push(entries);
           }
         }
 
-        resolve(workingSteps)
-        */
+        // if option is set, get machine id's for each working step
+        if (options.getIds) {
+          const workingSteps = context.find('#avForm_checkedArbeitsvorgaenge')
 
+          function getDetails(key,index,callback) {
+            data.workingStep = index.toString()
+              osmosis
+              .post('https://daten.ktbl.de/vrpflanze/prodverfahren/editAv', {
+                'checkedArbeitsvorgaenge': data.workingStep.toString(),
+                'action:modifyAv': 'Arbeitsgang ersetzen'
+              })
+              .config( 'headers', {
+                'cookie': data.cookie,
+                'referer': 'https://daten.ktbl.de/vrpflanze/prodverfahren/showResult.action'
+              })
+              .then((context) => {
+                const dom = new JSDOM(context)
+
+                const index = data.workingStep
+                const procedureGroupNode = dom.window.document.getElementById('loadArbeitsverfahren_selectedGruppe')
+                const procedureNameNode = dom.window.document.getElementById('loadMaschinenkombinationen_selectedArbeitsverfahren')
+                const machCombinationNode = dom.window.document.getElementById('loadResult_selectedMaschinenkombination')
+
+
+                if (!procedureNameNode){
+                  return callback()
+                }
+
+                const procedure = procedureNameNode.selectedOptions[0].text
+                const procedureGroup = procedureGroupNode.selectedOptions[0].text
+                const machCombination = machCombinationNode.selectedOptions[0].text
+
+                const procedureId = procedureNameNode.selectedOptions[0].value
+                const procedureGroupId = procedureGroupNode.selectedOptions[0].value
+                const machCombinationId = machCombinationNode.selectedOptions[0].value
+
+                results[index] = Object.assign({
+                  'procedure': procedure,
+                  'procedureGroup': procedureGroup,
+                  'machCombination': machCombination,
+                  'procedureId': procedureId,
+                  'procedureGroupId': procedureGroupId,
+                  'machCombinationId': machCombinationId
+                }, results[index])
+                console.log('here1')
+                callback()
+              })
+          }
+
+          return async.eachOfLimit(workingSteps,1,getDetails,(err) => {
+            if (err) reject(err)
+            else resolve(results)
+          })
+        } else {
+          resolve(results)
+        }
+      })
   })
 }
