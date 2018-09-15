@@ -73,11 +73,28 @@ module.exports = function cropProcedures(options) {
             next(context,data,next)
           })
         } else {
-          next(context,data,next)
+          next(context,data)
         }
       })
+      .post('https://daten.ktbl.de/vrpflanze/prodverfahren/editAv', {
+        'checkedArbeitsvorgaenge': '2',
+        'action:modifyAv': 'Arbeitsgang ersetzen'
+      })
+      .then((context,data,next) => {
+        const dom = new JSDOM(context);
+        fs.writeFileSync('test.html', dom.window.document.documentElement.outerHTML, 'utf-8')
+      })
       // scrape
-      .then(function (context,data,next) {
+      /*
+      .then((context,data,next) => {
+        const workingSteps = context.find('#avForm_checkedArbeitsvorgaenge')
+        data.workingStep =  0
+        next(context,data)
+
+        //const dom = new JSDOM(context);
+        //fs.writeFileSync('test.html', dom.window.document.documentElement.outerHTML, 'utf-8')
+      })
+        /*
         const dom = new JSDOM(context);
         var rows = dom.window.document.querySelectorAll('#tab-1 > #avForm > div:nth-child(1) > table > tbody > tr:nth-child(n+4)');
         var workingSteps = [];
@@ -119,7 +136,7 @@ module.exports = function cropProcedures(options) {
         }
 
         resolve(workingSteps)
-        
-      })
+        */
+
   })
 }
