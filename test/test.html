@@ -1,0 +1,1145 @@
+<html url="https://daten.ktbl.de/feldarbeit/entry.html"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/styleguide.css">
+		<link type="text/css" href="template/themes/ktbltheme/jquery-ui.css" rel="Stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/tipTip.css">
+		<link href="favicon.ico" rel="shortcut icon">
+		<link rel="icon" href="favicon.ico" type="image/icon">
+		<script type="text/javascript" src="jscript/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="jscript/jquery.blockUI.js"></script>
+		<script type="text/javascript" src="jscript/showhide.js"></script>
+		<script type="text/javascript" src="jscript/jquery-ui-1.8.custom.min.js"></script>
+		<script type="text/javascript" src="jscript/jquery.tipTip.minified.js"></script>
+		<script type="text/javascript" src="jscript/jquery.cookie.js"></script>
+
+	    <script type="text/javascript">
+	        function doHashMove() {
+	        
+	            document.location.hash = '#0' ;
+	        
+	        }
+	        var ver = navigator.appVersion;
+	        var agent = navigator.userAgent.toLowerCase();
+	        var platform = navigator.platform;
+	
+	        function showdiv(id) {
+	            if (ver.indexOf("MSIE") != -1 && !window.opera && ver.indexOf("Mac") == -1) {
+	                window.document.getElementById("d" + id).style.setAttribute('display', 'block', 'false');
+	            } else {
+	                document.getElementById("d" + id).style.display = "block";
+	            }
+	        }
+	        function hidediv(id) {
+	            if (ver.indexOf("MSIE") != -1 && !window.opera && ver.indexOf("Mac") == -1) {
+	                window.document.getElementById("d" + id).style.setAttribute('display', 'none', 'true');
+	            } else {
+	                document.getElementById("d" + id).style.display = "none";
+	            }
+	        }
+	
+	        $(document).ready(function(){
+	        	// BlockUI
+	         	$.unblockUI;
+	         	$("img[title]").tipTip({maxWidth: "auto", edgeOffset: 10, defaultPosition:"top", delay:100});
+	            // Erste Einträge von Drop-Down-Boxen mit "class=titleOption" werden disabled.
+	            $(":input option[value=0]").attr('disabled','disabled');
+	        });
+	        
+	        function blockUI() {
+	        	$.blockUI({
+	            	message: '<img src="images/ajax-loader-indicator.gif" /> <br>Daten werden geladen...', 
+	    			css: { 
+	    				backgroundColor:			'#fff', 
+	    				color:						'#3B4A79', 
+	    				padding:					'10px', 
+	    				border:						'none',
+	    				'-webkit-border-radius':	'10px', 
+	    				'-moz-border-radius': 		'10px'
+	    			},
+	    			overlayCSS: { 
+	    				backgroundColor: '#333333',
+	    				cursor:		  	 'default'
+	    			}
+	    		}); 
+	        }
+	    </script>
+		
+
+
+
+
+
+
+<title>
+	
+		
+    		KTBL-Feldarbeitsrechner
+		
+		
+	
+	
+</title>
+	</head>
+	<body id="bodyTag" onload="doHashMove()">
+		<a id="start"></a>
+		<div id="wrap">
+			<div id="header">
+				
+
+
+
+
+
+<div class="headerFloatL">
+    <div id="ueberschriftKopfzeile">
+    	
+			
+	    		KTBL-Feldarbeitsrechner
+			
+			
+		
+		
+    </div>
+</div>
+<div class="headerFloatR">
+    <div id="ktblKopfzeile">
+      <img class="ktbllogo" src="images/ktbl_logo_blau_2zeilig.gif" height="56px" alt="KTBL-Logo">
+    </div>
+</div>
+
+			</div>
+			<div id="navigation">
+				
+
+
+
+
+
+
+<div id="navigationWrap">
+    <div id="SubMenu">
+        <ul>
+            <li>
+            	 <a href="/feldarbeit/home.html">Startseite</a>
+            </li>
+        </ul>
+    </div>
+    <div id="SubMenu" style="height:200px">
+    </div>
+    <div id="SubMenu">
+        <ul>
+        	  <li>
+                <a href="https://www.ktbl.de/inhalte/service/nutzungsbedingungen-fuer-online-anwendungen/" target="_blank">Nutzungs­bedingungen</a>
+            </li>
+            <li>
+                <a href="/feldarbeit/kontakt.html" style="text-decoration:none;">Kontakt</a>
+            </li>
+            <li>
+                <a href="/feldarbeit/impressum.html" style="text-decoration:none;">Impressum</a>
+            </li>
+            <li>
+                <a href="https://www.ktbl.de/inhalte/service/datenschutz/" target="_blank">Datenschutz-<br>erklärung</a>
+            </li>
+            <li>
+                <a href="https://www.ktbl.de" target="_blank">KTBL Startseite</a>
+            </li>
+        </ul>
+    </div>
+    <div id="SubMenu" style="height:10px">
+        &nbsp;
+    </div>
+    <div id="SubMenu" style="height:10px">
+		&nbsp;
+	</div>	
+	 
+	<div id="SubMenu" style="height:10px">
+		&nbsp;
+	</div>	
+</div>
+
+			</div>
+			<div id="body">
+				<div style="display:none">	
+					<img src="images/ajax-loader-indicator.gif" alt="">
+				</div>
+				<div style="padding:0;margin:15px;" class="ueberschrift">
+					<div style="float: left;">
+						Arbeitsverfahren auswählen
+					</div>
+					<div style="float: right; font-size: 80%;">
+						
+  				  	</div>
+					<div class="clearBoth"></div>
+				</div>
+				<div>
+					
+
+
+
+
+<div class="infokasten">
+	<div class="infokastenOben">
+		<div>
+			<input id="infoImgId" type="image" src="images/pfeil.gif" class="infokastenPfeil"> 
+			<font class="infokastenObenSchlagwort">INFO |</font>
+			<font class="infokastenObenText"></font>
+		</div>
+	</div>
+	<div class="infokastenUnten" style="display: inline-block;" id="introShort">
+		Die Ergebnisse werden für Schläge von 1, 2, 5, 10, 20, 40 oder 80 ha mit einer Feld-Hof- Entfernung von 1, 2, 3, 4, 5, 6, 10, 15, 20 oder 30 km errechnet.
+		<a id="infomore" href="#info">...mehr</a>
+	</div>
+	<div class="infokastenUnten" style="display: none;" id="introLong">
+		Die Ergebnisse werden für Schläge von 1, 2, 5, 10, 20, 40 oder 80 ha mit einer Feld-Hof- Entfernung von 1, 2, 3, 4, 5, 6, 10, 15, 20 oder 30 km errechnet.
+		Je nach Arbeitsverfahren kann auch der Bodenbearbeitungswiderstand in den Stufen gering, mittel und hoch variiert werden.<p>Es sind über 3000 Arbeitsverfahren angelegt. Ein Arbeitsverfahren kann mehrere Teilarbeiten umfassen: Beladen, Bodenprobe, Einlagern, Entladen, Entladen am Hof, Feldarbeit, Festfahren (Silage im Fahrsilo), Dienstleistung, Trocknen und Lagern, Transport, Transport auf dem Feld, Personentransport sowie Reinigung und Laden. Bei parallel durchgeführten Teilarbeiten mit mehreren Arbeitskräften bestimmt das Verfahren mit der niedrigsten Leistung den Arbeitszeitbedarf des Verfahrens.</p>
+<p>Der Arbeitszeitbedarf gibt den Gesamtarbeitszeitbedarf des Arbeitsverfahrens an. Er enthält die Teilzeiten Hauptzeit, Wendezeit, Versorgungszeit, nicht vermeidbare Verlustzeit, Wartezeit, Wegezeit und Rüstzeit.</p>
+<p>Die in der Detailansicht ausgewiesene Flächenleistung des Arbeitsverfahrens dient u. a. der Abstimmung von Arbeitsketten. Für die Berechnung der Flächenleistung wird die Feldarbeit herangezogen. Diese enthält die Teilzeiten Hauptzeit, Wendezeit, Versorgungszeit und nicht vermeidbare Verlustzeit.</p>
+<p></p>
+<p>Für die Berechnung der fixen Kosten wird eine jährliche Nutzung der Maschinen in Höhe der Auslastungsschwelle unterstellt. Die fixen Kosten enthalten Abschreibung, Zinskosten für das in der Maschine gebundene Kapital und Sonstiges (z.B. Unterbringung, Versicherung und Gebühren). Mit der Abschreibung wird der gesamte Wertverlust eines Gebrauchsguts auf die Nutzungsdauer verteilt. Der Wertverlust ergibt sich aus dem zeitabhängigen Wertverlust aufgrund überalterung und dem leistungsabhängigen Wertverlust aufgrund des nutzungsbedingten Verschleißes sowie einer fixen Komponente, welche den Wertverlust nach dem Kauf einer Neumaschine widerspiegelt. In der Kalkulation beträgt der Restwert infolge der Nutzung an der Auslastungsschwelle 20 % des Anschaffungspreises der Maschinen.</p>
+<p>Die variablen Kosten setzen sich aus den Betriebsstoff- und Reparaturkosten zusammen. Die Schmierstoffkosten sind in den Reparaturkosten enthalten. Der Treibstoffbedarf wird teilzeitspezifisch auf Basis der Zeitanteile der einzelnen Teilzeiten und der Motorbelastung in der jeweiligen Teilzeit berechnet.</p>
+		<a id="infoless" href="#info">...weniger</a> <br>
+	</div> 
+</div>
+				</div>
+				<div>
+					
+
+
+
+
+<div class="infokasten">
+	<div class="infokastenOben">
+		<div>
+			<input id="anleitungImgId" type="image" src="images/pfeil.gif" class="infokastenPfeil"> 
+			<font class="infokastenObenSchlagwort">ANLEITUNG |</font>
+		</div>
+	</div>
+	<div class="infokastenUnten" style="display: block;" id="anleitungShort">
+		Über eine dreistufige Auswahl - bestehend aus <i>Verfahrensgruppe</i>, <i>Arbeitsverfahren</i> und <i>Maschinenkombination</i> - erhalten Sie das Ergebnis für das Arbeitsverfahren.
+		<a id="anleitungmore" href="#anleitung">...mehr</a>
+	</div>
+	<div class="infokastenUnten" style="display: none;" id="anleitungLong">
+		Über eine dreistufige Auswahl - bestehend aus <i>Verfahrensgruppe</i>, <i>Arbeitsverfahren</i> und <i>Maschinenkombination</i> - erhalten Sie das Ergebnis für das Arbeitsverfahren.
+		<p>Voreingestellt sind eine Schlaggröße von 1 ha und eine Feld-Hofentfernung von 1 km. Diese Einstellungen können Sie in den Auswahlfeldern rechts oben ändern. In diesem Auswahlblock lassen sich gegebenenfalls auch der Bodenbearbeitungswiderstand, die Ernte- oder Ausbringmenge und die Arbeitsbreite variieren. Das neue Ergebnis wird nach Klick auf die Schaltfläche <i>aktualisieren</i> angezeigt.</p> <p>Jedes ausgewählte Arbeitsverfahren kann ausgedruckt oder im Format von MS-Excel gespeichert werden. Für jedes Arbeitsverfahren wird dabei eine neue Datei angelegt.</p>
+		<a id="anleitungless" href="#anleitung">...weniger</a> <br>
+	</div> 
+</div>
+				</div>
+				<div style="padding: 25px 5px 5px 25px;">
+					<noscript>
+						<div class="errorMessage">
+							<div class="errorHeader">FEHLER | JAVASCRIPT DEAKTIVIERT</div>
+							<div class="errorText">Sie haben in ihrem Browser Javascript deaktiviert. Bitte aktivieren Sie javascript in ihrem Browser.</div>
+						</div>
+					</noscript>
+				</div>
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   	
+
+
+	
+
+
+
+	
+
+
+
+
+<div class="aktionskasten">
+<div class="aktionskastenOben">
+<a name="anwendung"></a>
+    <font class="aktionskastenObenSchlagwort">AUSWAHL</font>
+</div>
+<div class="aktionskastenUnten">
+<table>
+
+<tbody><tr>
+<td valign="top">
+    <table class="schrittkasten" style="width: 400px;">
+        <colgroup>
+            <col width="100%">
+        </colgroup>
+        <tbody><tr class="schrittkasten">
+            <td class="schrittkastenOben">
+                <div class="schrittkastenObenZahl">
+                    1.
+                </div>
+                <div class="schrittkastenObenText">
+                    Arbeitsvorgang
+                </div>
+            </td>
+        </tr>
+        <tr class="schrittkasten">
+            
+                <td class="schrittkastenUnten" style="height:180px" valign="top">
+                	
+                    Verfahrensgruppe
+                    <br>
+                    <form name="primaryForm" method="post" action="/feldarbeit/entry.html" style="display:inline;">
+                    	
+							
+							<select name="hgId" onchange="blockUI();submit()" style="width:350px;"><option value="0">[Verfahrensgruppe]</option>
+<option value="3" selected="">Bestellung</option>
+<option value="23">Bewässerung</option>
+<option value="1">Bodenbearbeitung</option>
+<option value="16">Bonitur und Bodenprobenahme</option>
+<option value="2">Düngung</option>
+<option value="11">Futterbergung und -einlagerung</option>
+<option value="6">Futterwerbung</option>
+<option value="39">Gemüse - Bodenbearbeitung</option>
+<option value="338">Gemüse - Düngung</option>
+<option value="37">Gemüse - Pflege</option>
+<option value="36">Gemüse säen und pflanzen</option>
+<option value="9">Gemüseernte und -aufbereitung</option>
+<option value="7">Kartoffelernte</option>
+<option value="5">Mähdrusch</option>
+<option value="21">Nawaro-Ernte</option>
+<option value="4">Pflege</option>
+<option value="19">Strohbergung</option>
+<option value="20">Transport zum Kunden</option>
+<option value="10">Zucker-, Futterrübenernte</option></select>
+						
+                       
+						<input type="hidden" name="state" value="2">
+						
+                    </form>
+
+                    <br>
+                    
+                    Arbeitsverfahren
+                    <br>
+                    <form name="primaryForm" method="post" action="/feldarbeit/entry.html" style="display:inline;">
+                        
+	                    	
+                            <select name="gId" onchange="blockUI();submit()" style="width:350px;"><option value="0">[Arbeitsverfahren]</option>
+<option value="2865">Einzelkornsaat von Chinakohl</option>
+<option value="62">Einzelkornsaat von Mais</option>
+<option value="266">Einzelkornsaat von Sonnenblumen</option>
+<option value="218">Einzelkornsaat von Sorghum</option>
+<option value="70">Einzelkornsaat von Zuckerrüben</option>
+<option value="75">Legen von Kartoffeln, Großkisten</option>
+<option value="303">Legen von Kartoffeln in separierte Beete; Pflanzgut lose</option>
+<option value="96">Legen von Kartoffeln; Kombination  Beizen, Düngen, Legen</option>
+<option value="108">Legen von Kartoffeln; Kombination Pflanzbettbereitung, Beizen, Düngen, Legen, Dammaufbau</option>
+<option value="271">Legen von Kartoffeln; Pflanzgut lose</option>
+<option value="85">Legen von Kartoffeln; Pflanzgut Sackware</option>
+<option value="89">Legen von Kartoffeln; Pflanzgut (vorgekeimt)</option>
+<option value="95">Legen von Miscanthus-Rhizomstücken; Pflanzgut Sackware</option>
+<option value="87">Legen von Topinamburknollen, Pflanzgut lose</option>
+<option value="65">Mulcheinzelkornsaat von Mais</option>
+<option value="269">Mulcheinzelkornsaat von Zuckerrüben</option>
+<option value="1501">Mulchsaat von Roggen, Triticale</option>
+<option value="295">Mulchsaat von Weizen, Ackerbohnen, Erbsen</option>
+<option value="296">Nachsaat von Grassamen, Kleegras mit Spezialmaschine</option>
+<option value="60">Pflanzen von Pappeln / Weiden</option>
+<option value="80">Pflanzkartoffeltransport; Großkisten</option>
+<option value="77">Pflanzkartoffeltransport, Pflanzgut lose</option>
+<option value="78">Pflanzkartoffeltransport; Sackware</option>
+<option value="279">Pflanzkartoffeltransport; Vorkeimkisten</option>
+<option value="275">Pflanzkartoffeltransport; Vorkeimsäcke</option>
+<option value="72">Pflanzrutentransport; Paletten</option>
+<option value="58">Saatguttransport</option>
+<option value="69">Säen mit Dammkultursämaschine</option>
+<option value="272">Säen von Dammkulturen (System Turiel)</option>
+<option value="280">Säen von Futterleguminose als Untersaat</option>
+<option value="276">Säen von Gerste mit Direktsaatmaschine</option>
+<option value="282">Säen von Gerste mit Fräse und Sämaschine</option>
+<option value="301">Säen von Gerste mit Grubber, Kreiselegge und Sämaschine</option>
+<option value="290" selected="">Säen von Gerste mit Kreiselegge und Sämaschine</option>
+<option value="299">Säen von Gerste mit Saatbettkombination und Sämaschine</option>
+<option value="219">Säen von Gerste mit Sämaschine</option>
+<option value="291">Säen von Gerste mit Zinkenrotor und Sämaschine</option>
+<option value="92">Säen von Grassamen, Kleegras mit Direktsaatmaschine</option>
+<option value="103">Säen von Grassamen, Kleegras mit Grubber, Kreiselegge und Sämaschine</option>
+<option value="98">Säen von Grassamen, Kleegras mit Kreiselegge und Sämaschine</option>
+<option value="343">Säen von Grassamen, Kleegras mit Saatbettkombination und Sämaschine</option>
+<option value="286">Säen von Grassamen, Kleegras mit Sämaschine</option>
+<option value="99">Säen von Grassamen, Kleegras mit Zinkenrotor und Sämaschine</option>
+<option value="297">Säen von Grassamen,Kleegras mit Fräse und Sämaschine</option>
+<option value="1961">Säen von Hafer, Dinkel mit Direktsaatmaschine</option>
+<option value="298">Säen von Hafer, Dinkel mit Kreiselegge und Sämaschine</option>
+<option value="273">Säen von Hafer, Dinkel mit Sämaschine</option>
+<option value="277">Säen von Leindotter als Gemengepartner</option>
+<option value="278">Säen von Öllein mit Direktsaatmaschine</option>
+<option value="283">Säen von Öllein mit Fräse und Sämaschine</option>
+<option value="302">Säen von Öllein mit Grubber, Kreiselegge und Sämaschine</option>
+<option value="292">Säen von Öllein mit Kreiselegge und Sämaschine</option>
+<option value="300">Säen von Öllein mit Saatbettkombination und Sämaschine</option>
+<option value="73">Säen von Öllein mit Sämaschine</option>
+<option value="293">Säen von Öllein mit Zinkenrotor und Sämaschine</option>
+<option value="81">Säen von Raps mit Direktsaatmaschine</option>
+<option value="83">Säen von Raps mit Fräse und Sämaschine</option>
+<option value="94">Säen von Raps mit Grubber, Kreiselegge und Sämaschine</option>
+<option value="91">Säen von Raps mit Kreiselegge und Sämaschine</option>
+<option value="93">Säen von Raps mit Saatbettkombination und Sämaschine</option>
+<option value="67">Säen von Raps mit Sämaschine</option>
+<option value="289">Säen von Raps mit Zinkenrotor und Sämaschine</option>
+<option value="1581">Säen von Roggen als Dammkultur</option>
+<option value="1481">Säen von Roggen, Triticale mit Direktsaatmaschine</option>
+<option value="1441">Säen von Roggen, Triticale mit Fräse und Sämaschine</option>
+<option value="1482">Säen von Roggen, Triticale mit Grubber, Kreiselegge und Sämaschine</option>
+<option value="97">Säen von Roggen, Triticale mit Kreiselegge und Sämaschine</option>
+<option value="1502">Säen von Roggen, Triticale mit Saatbettkombination und Sämaschine</option>
+<option value="284">Säen von Roggen, Triticale mit Sämaschine</option>
+<option value="1461">Säen von Roggen, Triticale mit Zinkenrotor und Sämaschine</option>
+<option value="102">Säen von Weizen, Ackerbohnen, Erbsen; Sojabohnen mit Direktsaatmaschine</option>
+<option value="104">Säen von Weizen, Ackerbohnen, Erbsen; Sojabohnen mit Fräse und Sämaschine</option>
+<option value="107">Säen von Weizen, Ackerbohnen, Erbsen; Sojabohnen mit Grubber, Kreiselegge und Sämaschine</option>
+<option value="105">Säen von Weizen, Ackerbohnen, Erbsen; Sojabohnen mit Kreiselegge und Sämaschine</option>
+<option value="345">Säen von Weizen, Ackerbohnen, Erbsen; Sojabohnen mit Saatbettkombination und Sämaschine</option>
+<option value="304">Säen von Weizen, Ackerbohnen, Erbsen; Sojabohnen mit Sämaschine</option>
+<option value="106">Säen von Weizen, Ackerbohnen, Erbsen; Sojabohnen mit Zinkenrotor und Sämaschine</option>
+<option value="267">Säen von Winterweizen, Ackerbohnen, Erbsen; Sojabohnen als Dammkultur</option>
+<option value="1561">Säen von Zwischenfrucht Ackerbohnen mit Sämaschine</option>
+<option value="1523">Säen von Zwischenfrucht Klee, Gräser, Luzerne, Landsberger Gemenge mit Sämaschine</option>
+<option value="76">Säen von Zwischenfrucht Klee in Dammkultur</option>
+<option value="1541">Säen von Zwischenfrucht Leguminosengemenge mit Sämaschine</option>
+<option value="1562">Säen von Zwischenfrucht Lupine mit Sämaschine</option>
+<option value="1521">Säen von Zwischenfrucht Ölrettich, Wicken, Rübsen; Senf, Wickroggen mit Sämaschine</option>
+<option value="1522">Säen von Zwischenfrucht Sonnenblumen, Phacelia, Markstammkohl mit Sämaschine</option>
+<option value="84">Säen von Zwischenfrucht Stoppelrüben mit Sämaschine</option>
+<option value="285">Topinamburknollentransport, Pflanzgut lose</option>
+<option value="82">Topinamburknollentransport, Sackware</option>
+<option value="281">Transport von Kohljungpflanzen zum Feld</option>
+<option value="287">Übersaat von Gras, pneumatisch mit Striegel</option></select>
+                        
+                        
+                        <input type="hidden" name="state" value="3">
+                       
+                    </form>
+                    <br>
+                    <a name="0"></a>
+                    
+                    Maschinenkombination
+                    <br>
+                    <form name="primaryForm" method="post" action="/feldarbeit/entry.html" style="display:inline;">
+                        
+	                    	
+                            <select name="avId" onchange="blockUI();submit()" style="width:350px;"><option value="0">[Maschinenkombination]</option>
+<option value="13898">Komplex 2 x 4 m; 138 kW</option>
+<option value="2509">Komplex 2x 3 m; 120 kW</option>
+<option value="2494">2 m; 102 kW</option>
+<option value="2482">2 m; 37 kW</option>
+<option value="2473">2 m; 45 kW</option>
+<option value="2497">2 m; 54 kW</option>
+<option value="2483">2 m; 67 kW</option>
+<option value="2498">2 m; 83 kW</option>
+<option value="2499">2,5 m; 102 kW</option>
+<option value="2500">2,5 m; 120 kW</option>
+<option value="2495">2,5 m; 138 kW</option>
+<option value="2484">2,5 m; 45 kW</option>
+<option value="2474">2,5 m; 54 kW</option>
+<option value="2479">2,5 m; 67 kW</option>
+<option value="2485">2,5 m; 83 kW</option>
+<option value="2942">3 m; 102 kW</option>
+<option value="2501">3 m; 120 kW</option>
+<option value="2502">3 m; 138 kW</option>
+<option value="2496">3 m; 157 kW</option>
+<option value="2486">3 m; 54 kW</option>
+<option value="2475">3 m; 67 kW</option>
+<option value="3729">3 m; 83 kW</option>
+<option value="2493" selected="">4 m; 102 kW</option>
+<option value="2476">4 m; 120 kW</option>
+<option value="2488">4 m; 138 kW</option>
+<option value="2503">4 m; 157 kW</option>
+<option value="2504">4 m; 233 kW</option>
+<option value="2487">4 m; 67 kW</option>
+<option value="3730">4 m; 83 kW</option>
+<option value="2477">4,5 m; 102 kW</option>
+<option value="2480">4,5 m; 120 kW</option>
+<option value="2505">4,5 m; 138 kW</option>
+<option value="2490">4,5 m; 157 kW</option>
+<option value="2506">4,5 m; 176 kW</option>
+<option value="2954">4,5 m; 200 kW</option>
+<option value="2489">4,5 m; 83 kW</option>
+<option value="2478">6 m  138 kW</option>
+<option value="2491">6 m; 102 kW</option>
+<option value="2507">6 m; 120 kW</option>
+<option value="2508">6 m; 176 kW</option>
+<option value="2481">6 m; 200 kW</option>
+<option value="2492">6 m; 200 kW</option></select>
+                        
+                        
+                        <input type="hidden" name="state" value="4">
+                      	
+                    </form>
+                </td>
+            
+
+			
+            
+        </tr>
+    </tbody></table>
+</td>
+<td width="20px"></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td valign="top">
+    <table class="schrittkasten" style="width: 330px;">
+        <colgroup>
+            <col width="100%">
+        </colgroup>
+        <tbody><tr class="schrittkasten">
+            <td class="schrittkastenOben">
+                <div class="schrittkastenObenZahl">
+                    2.
+                </div>
+                <div class="schrittkastenObenText">
+                    Spezifikation
+                </div>
+            </td>
+        </tr>
+        <tr class="schrittkasten">
+            <td class="schrittkastenUnten" style="height:180px">
+                <table>
+                <form name="primaryForm" method="post" action="/feldarbeit/entry.html"></form>
+                	
+                    <tbody><tr>
+                        <td>
+                            Schlaggröße&nbsp;[ha]
+                        </td>
+                        <td align="left">
+	                    	 
+								<select name="flaecheID" style="width:70px;"><option value="1" selected="">1</option>
+<option value="2">2</option>
+<option value="5">5</option>
+<option value="10">10</option>
+<option value="20">20</option>
+<option value="40">40</option>
+<option value="80">80</option></select>
+							
+	
+							
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            Bodenbearbeitungswiderstand
+                        </td>
+                        <td align="left">
+                            
+								<select name="bodenID" style="width:70px;"><option value="leicht" selected="">leicht</option>
+<option value="mittel">mittel</option></select>
+                            
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            Entfernung Hof-Feld&nbsp;[km]
+                        </td>
+                        <td align="left">
+                            
+	                            <select name="hofID" style="width:70px;">&gt;
+	                                <option value="1" selected="">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="10">10</option>
+<option value="15">15</option>
+<option value="20">20</option>
+<option value="30">30</option></select>
+                            
+
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                        	Menge
+                            
+                            
+                            	[kg/ha]
+                            
+                        </td>
+                        <td align="left">
+                            
+								<select name="mengeID" style="width:70px;"><option value="130.0" selected="">130.0</option>
+<option value="140.0">140.0</option>
+<option value="200.0">200.0</option></select>
+                            
+
+                            
+                        </td>
+
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            Arbeitsbreite&nbsp;[m]
+                        </td>
+                        <td align="left">
+                            
+  								<select name="arbeit" disabled="" style="width:70px;"><option value="4.0" selected="">4.0</option></select>
+                            
+
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" align="right" height="25">
+                            
+                                <input type="submit" value="aktualisieren" onclick="blockUI();submit();">
+                                <input type="hidden" name="state" value="5">
+                                
+                            
+                        </td>
+                    </tr>
+                    
+                </tbody></table>
+            </td>
+        </tr>
+    </tbody></table>
+</td>
+</tr>
+<tr>
+	<td colspan="3">
+	 	
+    	
+	</td>
+</tr>
+</tbody></table>
+</div>
+
+</div>
+
+<div class="ergebniskasten">
+    <div class="ergebniskastenOben">
+        <font class="ergebniskastenObenSchlagwort">BESCHREIBUNG DES ARBEITSVORGANGS</font>
+    </div>
+    <div class="ergebniskastenUntenTabelle">
+        <div style="padding: 10px;">
+            
+                <b>Säen von Gerste mit Kreiselegge und Sämaschine</b>
+                <br>
+                Schlaggröße:&nbsp;1&nbsp;ha,
+                
+                Bodenbearbeitungswiderstand:&nbsp;leicht,
+                Entfernung Hof-Feld:&nbsp;1&nbsp;km,
+                Menge:&nbsp;130,00&nbsp;kg/ha,
+                Arbeitsbreite:&nbsp;4,00
+               	
+               	
+               	
+					m,
+					Dieselpreis: 0,70
+	                €/l
+				
+                
+            
+		</div>
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+    	// BlockUI
+        $.unblockUI;
+        $("#tabs").tabs({ cookie: { expires: 0 } });
+        // Erste Einträge von Drop-Down-Boxen mit "class=titleOption" werden disabled.
+        $(":input option[value=0]").attr('disabled','disabled');
+        
+        });
+        
+</script>
+    
+<div class="ergebniskasten">
+	<div class="ergebniskastenOben">
+		<font class="ergebniskastenObenSchlagwort">ERGEBNIS</font>
+	</div>
+	<div class="ergebniskastenUntenTabelle">
+		<div id="tabs">
+			<ul>
+				<li>
+					<a href="#tabs-1">
+						Übersicht
+					</a>
+				</li>
+				<li>
+					<a href="#tabs-2">
+						Detailansicht
+					</a>
+				</li>
+				<li>
+					<a href="#tabs-3">
+						KEA
+					</a>
+				</li>
+			</ul>
+			
+			
+				<div id="tabs-1">
+					
+
+
+
+
+
+
+
+
+
+	<div class="reiterZwischenzeile">
+	    &nbsp;
+	</div>
+	<table class="tabelleOhneWidth" cellspacing="0px" width="100%">
+	    <colgroup>
+	        <col class="left" valign="middle" width="300px">
+	        <col class="left" valign="middle" width="80px">
+	        <col class="left" valign="middle" width="200px">
+	        <col class="left" valign="middle" width="200px">
+	        <col class="left" valign="middle" width="200px">
+	        <col class="left" valign="middle" width="200px">
+	    </colgroup>
+	    <tbody><tr>
+	        <td class="tabelleKopfUo left" colspan="2">
+	        	Teilarbeit 
+	        </td>
+	        <td class="tabelleKopfUo center">
+	            Arbeitszeitbedarf<br>Akh/ha
+	        </td>
+	        <td class="tabelleKopfUo center">
+	        	Flächenleistung<br>ha/h
+	        </td>
+	        <td class="tabelleKopfUo center">
+	        	Maschinenkosten<br>€/ha
+	        </td>
+	        <td class="tabelleKopfUo center">
+	            Dieselbedarf<br>l/ha
+	        </td>
+	    </tr>
+	    
+	        <tr>
+	            <td class="tabelleEbene2 left">
+	                4 m; 102 kW
+	            </td>
+	            <td class="tabelleEbene2 right">
+	                Feldarbeit
+	            </td>
+	            <td class="tabelleEbene2 right">
+	                1,03
+	            </td>
+	            <td class="tabelleEbene2 right">
+	                1,49
+	            </td>
+	            <td class="tabelleEbene2 right">
+	                49,48
+	            </td>
+	            <td class="tabelleEbene2 right">
+	               12,01
+	            </td>
+	        </tr>
+	    
+	    
+	    
+	</tbody></table>
+	
+	
+		<div class="ergebniskastenAktionsbereichAktiv">
+		    <div class="ergebniskastenTextaktion">
+		        <div class="linkaktion">
+		            <div class="abstand">
+		                &nbsp;
+		            </div>
+		            <div class="abstand">
+		                &nbsp;
+		            </div>
+		                <form name="primaryForm" method="post" action="/feldarbeit/print.html" style="display:inline">
+		                    <a href="/feldarbeit/print.html?moreDetails=true" target="_blank" style="color: #3B4A79;text-decoration: none;font-size: 100%;"><input type="image" name="" src="images/print24x24.png" style="vertical-align:bottom">&nbsp;&nbsp;Arbeitsvorgang drucken</a>
+		                    <input type="hidden" name="moreDetails" value="false">
+		                </form>
+		        </div>
+		        <div class="linkaktion">
+		            <div class="abstand">
+		                &nbsp;
+		            </div>
+		            <div class="abstand">
+		                &nbsp;
+		            </div>
+	                <form method="post" action="binaryFile;jsessionid=53E4875A32E8AEDD5047F2AA564BC28B" style="display:inline">
+	                    <input type="image" name="" src="images/excel22x22.png" style="vertical-align:bottom">
+	                    <input type="submit" value="Arbeitsvorgang in EXCEL ausgeben" class="submitButtonWieTextLeft">
+	                    <input type="hidden" name="excel" value="1">
+	                </form>
+		        </div>
+		         <div class="linkaktion">
+		         	  <div class="abstand">
+		                &nbsp;
+		            </div>
+		         </div>
+		    </div>
+	    </div>
+	    <div class="ergebniskastenButtonaktion" style="float:right">
+			
+			
+		</div>
+		<div class="clearBoth"></div>
+	 
+
+
+
+
+				</div>
+				<div id="tabs-2">
+					
+
+
+
+
+
+
+
+
+<div class="reiterZwischenzeile">
+    &nbsp;
+</div>
+<table class="tabelleOhneWidth" cellspacing="0px" width="100%">
+    <colgroup>
+        <col class="left" valign="middle" width="300px">
+        <col class="left" valign="middle" width="80px">
+        <col class="left" valign="middle" width="80px">
+        <col class="left" valign="middle" width="80px">
+        <col class="left" valign="middle" width="80px">
+        <col class="left" valign="middle" width="20px">
+        <col class="left" valign="middle" width="80px">
+        <col class="left" valign="middle" width="80px">
+        <col class="left" valign="middle" width="20px">
+        <col class="left" valign="middle" width="20px">
+    </colgroup>
+    <tbody><tr>
+        <td class="tabelleKopfUo left" colspan="2" rowspan="2">
+            Teilarbeit
+        </td>
+        <td class="tabelleKopfUo center" rowspan="2">
+            Arbeitszeit-<br>bedarf
+        </td>
+        <td class="tabelleKopfUo center" rowspan="2">
+            Flächen-<br>leistung
+        </td>
+        <td class="tabelleKopfUo center" colspan="5">
+            Maschinenkosten
+        </td>
+        <td class="tabelleKopfUo center" rowspan="2">
+            Diesel-<br>bedarf
+        </td>
+    </tr>
+    <tr>
+	    <td class="tabelleKopfOoUo center">
+	        Abschreibung
+	    </td>
+	    <td class="tabelleKopfOoUo center">
+	        Zinskosten
+	    </td>
+	    <td class="tabelleKopfOoUo center">
+	        Sonstiges&nbsp;<img title="z.B. Unterbringung, Versicherungen, Gebühren" border="none" src="images/info_white_10.png"> 
+	    </td>
+	    <td class="tabelleKopfOoUo center">
+	        Reparaturen
+	    </td>
+	    <td class="tabelleKopfOoUo center">
+	        Betriebsstoffe
+	    </td>
+    </tr>
+	<tr>
+		<td class="tabelleKopfOo center" colspan="2"></td>
+		<td class="tabelleKopfOo center">
+			Akh/ha
+		</td>
+		<td class="tabelleKopfOo center">
+			ha/h
+		</td>
+		<td class="tabelleKopfOo center" colspan="5">
+			€/ha
+		</td>
+		<td class="tabelleKopfOo center" colspan="5">
+			l/ha
+		</td>
+	</tr>
+    
+        <tr>
+            <td class="tabelleEbene2  left">
+                4 m; 102 kW
+            </td>
+            <td class="tabelleEbene2  right">
+                Feldarbeit
+            </td>
+            <td class="tabelleEbene2  right">
+                1,03
+            </td>
+            <td class="tabelleEbene2  right">
+                1,49
+            </td>
+            <td class="tabelleEbene2  right">
+                17,36
+            </td>
+            <td class="tabelleEbene2  right">
+                4,51
+            </td>
+            <td class="tabelleEbene2  right">
+                1,72
+            </td>
+            <td class="tabelleEbene2  right">
+                17,48
+            </td>
+            <td class="tabelleEbene2  right">
+                8,41
+            </td>
+            <td class="tabelleEbene2  right">
+                12,01
+            </td>
+        </tr>
+    
+    
+    
+</tbody></table>
+
+
+<div class="ergebniskastenButtonaktion">
+</div>
+
+<div class="ergebniskastenAktionsbereichAktiv">
+    <div class="ergebniskastenTextaktion">
+        <div class="linkaktion">
+            <div class="abstand">
+                &nbsp;
+            </div>
+            <div class="abstand">
+                &nbsp;
+            </div>
+            
+                <form name="primaryForm" method="post" action="/feldarbeit/print.html" style="display:inline">
+                    <a href="/feldarbeit/print.html?moreDetails=true" target="_blank" style="color: #3B4A79;text-decoration: none;font-size: 100%;"><input type="image" name="" src="images/print24x24.png" style="vertical-align:bottom">&nbsp;&nbsp;Arbeitsvorgang drucken</a>
+                    <input type="hidden" name="moreDetails" value="false">
+                </form>
+            
+        </div>
+
+        <div class="linkaktion">
+            <div class="abstand">
+                &nbsp;
+            </div>
+            <div class="abstand">
+                &nbsp;
+            </div>
+            
+                <form method="post" action="binaryFile;jsessionid=53E4875A32E8AEDD5047F2AA564BC28B" style="display:inline">
+                    <input type="image" name="" src="images/excel22x22.png" style="vertical-align:bottom">
+                    <input type="submit" value="Arbeitsvorgang in EXCEL ausgeben" class="submitButtonWieTextLeft">
+                    <input type="hidden" name="excel" value="1">
+                </form>
+            
+        </div>
+    </div>
+    <div class="clearBoth"></div>
+</div>
+
+
+
+				</div>
+				<div id="tabs-3">
+					
+
+
+
+
+
+
+
+
+<div class="reiterZwischenzeile">
+    &nbsp;
+</div>
+<table class="tabelleOhneWidth" cellspacing="0px" width="100%">
+    <colgroup>
+        <col class="left" valign="middle" width="300px">
+        <col class="left" valign="middle" width="80px">
+        <col class="left" valign="middle" width="80px">
+        <col class="left" valign="middle" width="80px">
+        <col class="left" valign="middle" width="80px">
+        <col class="left" valign="middle" width="20px">
+        
+    </colgroup>
+    
+    <tbody><tr>
+    	
+        <td class="tabelleKopfUo left" colspan="2" rowspan="3">
+            Teilarbeit
+        </td>
+        
+        <td class="tabelleKopfUo center" colspan="4">
+            Kumulierter Energieaufwand
+        </td>
+    </tr>
+    
+    <tr>
+    	
+    	
+	    
+	   	<td class="tabelleKopfOoUo center">
+	        Betriebsstoff
+	    </td>
+	    <td class="tabelleKopfOoUo center">
+	        Betriebsmittel&nbsp;<img title="Ausschließlich Folie, Netz und Garn;<br />ohne Betriebsmittel wie Dünge- und Pflanzenschutzmittel" border="none" src="images/info_12x12.png">
+	    </td>
+	    <td class="tabelleKopfOoUo center">
+	        Maschine
+	    </td>
+	    <td class="tabelleKopfOoUo center">
+	        Gesamt
+	    </td>
+    </tr>
+    
+	<tr>
+		
+		<td class="tabelleKopfOo center" colspan="4">
+			MJ/ha
+		</td>
+	</tr>
+    
+        <tr>
+            <td class="tabelleEbene2  left">
+                4 m; 102 kW
+            </td>
+           
+            <td class="tabelleEbene2  right">
+                Feldarbeit
+            </td>
+             
+             
+             <td class="tabelleEbene2  right">
+               	590
+            </td>
+             <td class="tabelleEbene2  right">
+               	0
+            </td>
+             <td class="tabelleEbene2  right">
+               	124
+            </td>
+             <td class="tabelleEbene2  right">
+               	714
+            </td>
+        </tr>
+    
+    
+    
+    
+</tbody></table>
+
+
+<div class="ergebniskastenButtonaktion">
+</div>
+
+<div class="ergebniskastenAktionsbereichAktiv">
+    <div class="ergebniskastenTextaktion">
+        <div class="linkaktion">
+            <div class="abstand">
+                &nbsp;
+            </div>
+            <div class="abstand">
+                &nbsp;
+            </div>
+            
+                <form name="primaryForm" method="post" action="/feldarbeit/print.html" style="display:inline">
+                    <a href="/feldarbeit/print.html?moreDetails=true" target="_blank" style="color: #3B4A79;text-decoration: none;font-size: 100%;"><input type="image" name="" src="images/print24x24.png" style="vertical-align:bottom">&nbsp;&nbsp;Arbeitsvorgang drucken</a>
+                    <input type="hidden" name="moreDetails" value="false">
+                </form>
+            
+        </div>
+
+        <div class="linkaktion">
+            <div class="abstand">
+                &nbsp;
+            </div>
+            <div class="abstand">
+                &nbsp;
+            </div>
+            
+                <form method="post" action="binaryFile;jsessionid=53E4875A32E8AEDD5047F2AA564BC28B" style="display:inline">
+                    <input type="image" name="" src="images/excel22x22.png" style="vertical-align:bottom">
+                    <input type="submit" value="Arbeitsvorgang in EXCEL ausgeben" class="submitButtonWieTextLeft">
+                    <input type="hidden" name="excel" value="1">
+                </form>
+            
+        </div>
+    </div>
+    <div class="clearBoth"></div>
+</div>
+
+
+
+				</div>
+			
+			
+			
+		</div>
+	</div>
+</div>
+
+<div>
+    <div class="trennlinie">
+        <div class="linkaktionSe">
+            <div class="abstandSe">
+                &nbsp;
+            </div>
+            <div class="clearBoth"></div>
+        </div>
+    </div>
+    
+</div>
+
+				<div style="margin:15px;padding:0">
+					Alle Angaben ohne Gewähr.
+				</div>
+			</div>
+			<div id="footer">
+				
+			</div>
+		</div>
+	
+
+
+</body></html>
