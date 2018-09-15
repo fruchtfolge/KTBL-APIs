@@ -20,7 +20,7 @@ app.get('/procedure', function (req, res) {
 	}
 	else if (!req.query.system) {
 		res.send ( 'Please enter a valid cropping system for the crop ' + urlencode.decode(req.query.crop) + ' to your request. The minimum request parameters consist of a crop type and according cropping system. Here is a valid example of such a request: ... See ... for additional help.');
-	} 
+	}
 	*/
 	else {
 		// get params from req url
@@ -100,7 +100,7 @@ app.get('/procedure', function (req, res) {
 
 				if (rows.length > 3) {
 					var steps = []
-					
+
 					for (var i = 3; i < rows.length; i++) {
 						var cells = rows[i].getElementsByTagName('td');
 						if (cells.length < 10) {
@@ -124,7 +124,7 @@ app.get('/procedure', function (req, res) {
 
 						steps.push(step)
 					}
-					
+
 					var json = {
 		    			'procedure': item[1],
 		    			'machCombination': item[2],
@@ -133,10 +133,10 @@ app.get('/procedure', function (req, res) {
 		    			'distance': item[5],
 		   				'amount': item[6],
 		    			'workingWidth': item[7],
-						'name': procedureName, 
-						'procedureGroup': item[0], 
-						'frequency': null, 
-						'month': null, 
+						'name': procedureName,
+						'procedureGroup': item[0],
+						'frequency': null,
+						'month': null,
 						'steps': steps
 					}
 					res.send(JSON.stringify(json));
@@ -291,7 +291,7 @@ app.get('/crop_procedures', function (req, res) {
 	}
 })
 
-var server = app.listen(8000, function () {
+var server = app.listen(8001, function () {
 
   var host = server.address().address
   var port = server.address().port

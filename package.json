@@ -1,0 +1,36 @@
+{
+  "name": "ktbl-apis",
+  "version": "0.0.1",
+  "description": "A (scraping) API wrapper for the KTBL field working procedures",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Toffi-123/KTBL-APIs.git"
+  },
+  "keywords": [
+    "KTBL",
+    "API",
+    "Agriculture"
+  ],
+  "author": "Christoph Pahmeyer <christoph.pahmeyer@uni-bonn.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Toffi-123/KTBL-APIs/issues"
+  },
+  "homepage": "https://github.com/Toffi-123/KTBL-APIs#readme",
+  "dependencies": {
+    "async": "^2.6.1",
+    "js2xmlparser": "^3.0.0",
+    "jsdom": "^12.0.0",
+    "jsonexport": "^2.3.0",
+    "libxmljs-dom": "0.0.13",
+    "osmosis": "^1.1.8",
+    "urlencode": "^1.1.0"
+  }
+}
