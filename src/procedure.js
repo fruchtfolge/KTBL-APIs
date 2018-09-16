@@ -116,5 +116,6 @@ module.exports = function procedure(options) {
           reject('No information for given query')
         }
       })
+      .error(reject)
   })
 }

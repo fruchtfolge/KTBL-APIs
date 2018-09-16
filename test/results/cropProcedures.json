@@ -1,0 +1,719 @@
+[{
+  "frequency": 0.2,
+  "month": "OKT1",
+  "name": "Bodenprobe",
+  "amount": "",
+  "steps": [{
+    "abr": "BP",
+    "description": "Entnahme von Hand; Fahrten mit Pick-up",
+    "time": 0.04,
+    "fuelCons": 0.03,
+    "deprec": 0.11,
+    "interest": 0.01,
+    "others": 0.04,
+    "maintenance": 0.03,
+    "lubricants": 0.02,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "OKT2",
+  "name": "Gülle ausbringen, ab Hof",
+  "amount": ["20.00", "m³"],
+  "steps": [{
+    "abr": "FA",
+    "description": "Pumptankwagen, 5 m³; Schleppschlauchverteiler, 7,5 m; 45 kW",
+    "time": 2.01,
+    "fuelCons": 7.05,
+    "deprec": 19.12,
+    "interest": 4.63,
+    "others": 2.51,
+    "maintenance": 18.45,
+    "lubricants": 4.94,
+    "services": 0
+  }]
+}, {
+  "frequency": 0.5,
+  "month": "OKT2",
+  "name": "Pflügen mit Drehpflug",
+  "amount": "",
+  "steps": [{
+    "abr": "FA",
+    "description": "4 Schare, 1,4 m, angebaut; 67 kW",
+    "time": 0.94,
+    "fuelCons": 11.42,
+    "deprec": 6.97,
+    "interest": 2,
+    "others": 0.97,
+    "maintenance": 12.28,
+    "lubricants": 8,
+    "services": 0
+  }]
+}, {
+  "frequency": 0.5,
+  "month": "OKT2",
+  "name": "Säen mit Kreiselegge und Sämaschine",
+  "amount": ["40.00", "kg"],
+  "steps": [{
+    "abr": "FA",
+    "description": "2,5 m; 67 kW",
+    "time": 0.59,
+    "fuelCons": 6.19,
+    "deprec": 6.69,
+    "interest": 1.79,
+    "others": 0.77,
+    "maintenance": 8.69,
+    "lubricants": 4.33,
+    "services": 0
+  }]
+}, {
+  "frequency": 0.5,
+  "month": "OKT2",
+  "name": "Walzen Saatbett oder Ansaat",
+  "amount": "",
+  "steps": [{
+    "abr": "FA",
+    "description": "4,5 m; 45 kW",
+    "time": 0.3,
+    "fuelCons": 1.7,
+    "deprec": 2.4,
+    "interest": 0.71,
+    "others": 0.53,
+    "maintenance": 2.49,
+    "lubricants": 1.19,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "MRZ1",
+  "name": "Gülle ausbringen, ab Hof",
+  "amount": ["20.00", "m³"],
+  "steps": [{
+    "abr": "FA",
+    "description": "Pumptankwagen, 5 m³, 3 m; 45 kW",
+    "time": 2.06,
+    "fuelCons": 9.69,
+    "deprec": 20.54,
+    "interest": 4.97,
+    "others": 2.8,
+    "maintenance": 21.77,
+    "lubricants": 6.78,
+    "services": 0
+  }]
+}, {
+  "frequency": 0.5,
+  "month": "MRZ2",
+  "name": "Abschleppen von Grünland",
+  "amount": "",
+  "steps": [{
+    "abr": "FA",
+    "description": "4,5 m; 45 kW",
+    "time": 0.3,
+    "fuelCons": 1.84,
+    "deprec": 1.46,
+    "interest": 0.42,
+    "others": 0.5,
+    "maintenance": 2.81,
+    "lubricants": 1.29,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "MRZ2",
+  "name": "Mineraldünger ausbringen, loser Dünger",
+  "amount": ["500.00", "kg"],
+  "steps": [{
+    "abr": "BLA",
+    "description": "Düngerförderschnecke",
+    "time": 0.02,
+    "fuelCons": 0.02,
+    "deprec": 0.07,
+    "interest": 0.02,
+    "others": 0.02,
+    "maintenance": 0.02,
+    "lubricants": 0.04,
+    "services": 0
+  }, {
+    "abr": "FA",
+    "description": "Anbauschleuderstreuer, 0,8 m³; 45 kW",
+    "time": 0.25,
+    "fuelCons": 0.91,
+    "deprec": 1.87,
+    "interest": 0.46,
+    "others": 0.24,
+    "maintenance": 1.61,
+    "lubricants": 0.64,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "MRZ2",
+  "name": "Mineraldünger ausbringen, loser Dünger",
+  "amount": ["260.00", "kg"],
+  "steps": [{
+    "abr": "BLA",
+    "description": "Düngerförderschnecke",
+    "time": 0.01,
+    "fuelCons": 0.01,
+    "deprec": 0.04,
+    "interest": 0.01,
+    "others": 0.01,
+    "maintenance": 0.01,
+    "lubricants": 0.03,
+    "services": 0
+  }, {
+    "abr": "FA",
+    "description": "Anbauschleuderstreuer, 0,8 m³; 45 kW",
+    "time": 0.19,
+    "fuelCons": 0.76,
+    "deprec": 1.19,
+    "interest": 0.3,
+    "others": 0.15,
+    "maintenance": 1.18,
+    "lubricants": 0.53,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "MAI2",
+  "name": "Mähen mit Mähaufbereiter",
+  "amount": ["25.00", "t"],
+  "steps": [{
+    "abr": "FA",
+    "description": "2,4 m; 45 kW",
+    "time": 0.64,
+    "fuelCons": 5.52,
+    "deprec": 5.56,
+    "interest": 1.35,
+    "others": 0.52,
+    "maintenance": 5.87,
+    "lubricants": 3.86,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "MAI2",
+  "name": "Wenden mit Kreiselzettwender",
+  "amount": "",
+  "steps": [{
+    "abr": "FA",
+    "description": "4,5 m; 45 kW",
+    "time": 0.43,
+    "fuelCons": 2.79,
+    "deprec": 2.4,
+    "interest": 0.61,
+    "others": 0.37,
+    "maintenance": 4.09,
+    "lubricants": 1.95,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "MAI2",
+  "name": "Schwaden",
+  "amount": "",
+  "steps": [{
+    "abr": "FA",
+    "description": "3,5 m; 45 kW",
+    "time": 0.51,
+    "fuelCons": 3.14,
+    "deprec": 2.92,
+    "interest": 0.74,
+    "others": 0.77,
+    "maintenance": 4.9,
+    "lubricants": 2.2,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "MAI2",
+  "name": "Ballen pressen und wickeln, Anwelksilage",
+  "amount": ["11.88", "t"],
+  "steps": [{
+    "abr": "KO",
+    "description": "Dienstleistung",
+    "time": 0,
+    "fuelCons": 0,
+    "deprec": 0,
+    "interest": 0,
+    "others": 0,
+    "maintenance": 0,
+    "lubricants": 0,
+    "services": 240
+  }]
+}, {
+  "frequency": 1,
+  "month": "MAI2",
+  "name": "Ballentransport, Anwelksilage",
+  "amount": ["11.90", "t"],
+  "steps": [{
+    "abr": "TR",
+    "description": "Doppelzug je 8 t, Dreiseitenkippanhänger; Frontlader, 1.500 daN; Rundballenzange; 45 kW",
+    "time": 1.62,
+    "fuelCons": 3.25,
+    "deprec": 14.55,
+    "interest": 4.23,
+    "others": 3.56,
+    "maintenance": 13.02,
+    "lubricants": 2.28,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "MAI2",
+  "name": "Mineraldünger ausbringen, loser Dünger",
+  "amount": ["220.00", "kg"],
+  "steps": [{
+    "abr": "BLA",
+    "description": "Düngerförderschnecke",
+    "time": 0.01,
+    "fuelCons": 0.01,
+    "deprec": 0.04,
+    "interest": 0.01,
+    "others": 0.01,
+    "maintenance": 0.01,
+    "lubricants": 0.03,
+    "services": 0
+  }, {
+    "abr": "FA",
+    "description": "Anbauschleuderstreuer, 0,8 m³; 45 kW",
+    "time": 0.18,
+    "fuelCons": 0.74,
+    "deprec": 1.08,
+    "interest": 0.27,
+    "others": 0.14,
+    "maintenance": 1.11,
+    "lubricants": 0.52,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "JUN2",
+  "name": "Mähen mit Mähaufbereiter",
+  "amount": ["25.00", "t"],
+  "steps": [{
+    "abr": "FA",
+    "description": "2,4 m; 45 kW",
+    "time": 0.64,
+    "fuelCons": 5.52,
+    "deprec": 5.56,
+    "interest": 1.35,
+    "others": 0.52,
+    "maintenance": 5.87,
+    "lubricants": 3.86,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "JUN2",
+  "name": "Wenden mit Kreiselzettwender",
+  "amount": "",
+  "steps": [{
+    "abr": "FA",
+    "description": "4,5 m; 45 kW",
+    "time": 0.43,
+    "fuelCons": 2.79,
+    "deprec": 2.4,
+    "interest": 0.61,
+    "others": 0.37,
+    "maintenance": 4.09,
+    "lubricants": 1.95,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "JUN2",
+  "name": "Schwaden",
+  "amount": "",
+  "steps": [{
+    "abr": "FA",
+    "description": "3,5 m; 45 kW",
+    "time": 0.51,
+    "fuelCons": 3.14,
+    "deprec": 2.92,
+    "interest": 0.74,
+    "others": 0.77,
+    "maintenance": 4.9,
+    "lubricants": 2.2,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "JUN2",
+  "name": "Ballen pressen und wickeln, Anwelksilage",
+  "amount": ["11.88", "t"],
+  "steps": [{
+    "abr": "KO",
+    "description": "Dienstleistung",
+    "time": 0,
+    "fuelCons": 0,
+    "deprec": 0,
+    "interest": 0,
+    "others": 0,
+    "maintenance": 0,
+    "lubricants": 0,
+    "services": 240
+  }]
+}, {
+  "frequency": 1,
+  "month": "JUN2",
+  "name": "Ballentransport, Anwelksilage",
+  "amount": ["11.90", "t"],
+  "steps": [{
+    "abr": "TR",
+    "description": "Doppelzug je 8 t, Dreiseitenkippanhänger; Frontlader, 1.500 daN; Rundballenzange; 45 kW",
+    "time": 1.62,
+    "fuelCons": 3.25,
+    "deprec": 14.55,
+    "interest": 4.23,
+    "others": 3.56,
+    "maintenance": 13.02,
+    "lubricants": 2.28,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "JUN2",
+  "name": "Mineraldünger ausbringen, loser Dünger",
+  "amount": ["220.00", "kg"],
+  "steps": [{
+    "abr": "BLA",
+    "description": "Düngerförderschnecke",
+    "time": 0.01,
+    "fuelCons": 0.01,
+    "deprec": 0.04,
+    "interest": 0.01,
+    "others": 0.01,
+    "maintenance": 0.01,
+    "lubricants": 0.03,
+    "services": 0
+  }, {
+    "abr": "FA",
+    "description": "Anbauschleuderstreuer, 0,8 m³; 45 kW",
+    "time": 0.18,
+    "fuelCons": 0.74,
+    "deprec": 1.08,
+    "interest": 0.27,
+    "others": 0.14,
+    "maintenance": 1.11,
+    "lubricants": 0.52,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "JUL2",
+  "name": "Mähen mit Mähaufbereiter",
+  "amount": ["18.00", "t"],
+  "steps": [{
+    "abr": "FA",
+    "description": "2,4 m; 45 kW",
+    "time": 0.64,
+    "fuelCons": 4.9,
+    "deprec": 5.56,
+    "interest": 1.35,
+    "others": 0.52,
+    "maintenance": 5.87,
+    "lubricants": 3.43,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "JUL2",
+  "name": "Wenden mit Kreiselzettwender",
+  "amount": "",
+  "steps": [{
+    "abr": "FA",
+    "description": "4,5 m; 45 kW",
+    "time": 0.43,
+    "fuelCons": 2.79,
+    "deprec": 2.4,
+    "interest": 0.61,
+    "others": 0.37,
+    "maintenance": 4.09,
+    "lubricants": 1.95,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "JUL2",
+  "name": "Schwaden",
+  "amount": "",
+  "steps": [{
+    "abr": "FA",
+    "description": "3,5 m; 45 kW",
+    "time": 0.51,
+    "fuelCons": 3.14,
+    "deprec": 2.92,
+    "interest": 0.74,
+    "others": 0.77,
+    "maintenance": 4.9,
+    "lubricants": 2.2,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "JUL2",
+  "name": "Ballen pressen und wickeln, Anwelksilage",
+  "amount": ["8.57", "t"],
+  "steps": [{
+    "abr": "KO",
+    "description": "Dienstleistung",
+    "time": 0,
+    "fuelCons": 0,
+    "deprec": 0,
+    "interest": 0,
+    "others": 0,
+    "maintenance": 0,
+    "lubricants": 0,
+    "services": 170
+  }]
+}, {
+  "frequency": 1,
+  "month": "JUL2",
+  "name": "Ballentransport, Anwelksilage",
+  "amount": ["8.60", "t"],
+  "steps": [{
+    "abr": "TR",
+    "description": "Doppelzug je 8 t, Dreiseitenkippanhänger; Frontlader, 1.500 daN; Rundballenzange; 45 kW",
+    "time": 1.17,
+    "fuelCons": 2.35,
+    "deprec": 10.52,
+    "interest": 3.06,
+    "others": 2.57,
+    "maintenance": 9.4,
+    "lubricants": 1.65,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "AUG2",
+  "name": "Gülle ausbringen, ab Hof",
+  "amount": ["10.00", "m³"],
+  "steps": [{
+    "abr": "FA",
+    "description": "Pumptankwagen, 5 m³, 3 m; 45 kW",
+    "time": 1.26,
+    "fuelCons": 7.12,
+    "deprec": 12.93,
+    "interest": 3.12,
+    "others": 1.64,
+    "maintenance": 13.79,
+    "lubricants": 4.98,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "AUG2",
+  "name": "Mähen mit Mähaufbereiter",
+  "amount": ["14.00", "t"],
+  "steps": [{
+    "abr": "FA",
+    "description": "2,4 m; 45 kW",
+    "time": 0.64,
+    "fuelCons": 4.6,
+    "deprec": 5.56,
+    "interest": 1.35,
+    "others": 0.52,
+    "maintenance": 5.87,
+    "lubricants": 3.22,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "AUG2",
+  "name": "Wenden mit Kreiselzettwender",
+  "amount": "",
+  "steps": [{
+    "abr": "FA",
+    "description": "4,5 m; 45 kW",
+    "time": 0.43,
+    "fuelCons": 2.79,
+    "deprec": 2.4,
+    "interest": 0.61,
+    "others": 0.37,
+    "maintenance": 4.09,
+    "lubricants": 1.95,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "AUG2",
+  "name": "Schwaden",
+  "amount": "",
+  "steps": [{
+    "abr": "FA",
+    "description": "3,5 m; 45 kW",
+    "time": 0.51,
+    "fuelCons": 3.14,
+    "deprec": 2.92,
+    "interest": 0.74,
+    "others": 0.77,
+    "maintenance": 4.9,
+    "lubricants": 2.2,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "AUG2",
+  "name": "Ballen pressen und wickeln, Anwelksilage",
+  "amount": ["6.65", "t"],
+  "steps": [{
+    "abr": "KO",
+    "description": "Dienstleistung",
+    "time": 0,
+    "fuelCons": 0,
+    "deprec": 0,
+    "interest": 0,
+    "others": 0,
+    "maintenance": 0,
+    "lubricants": 0,
+    "services": 140
+  }]
+}, {
+  "frequency": 1,
+  "month": "AUG2",
+  "name": "Ballentransport, Anwelksilage",
+  "amount": ["6.70", "t"],
+  "steps": [{
+    "abr": "TR",
+    "description": "Doppelzug je 8 t, Dreiseitenkippanhänger; Frontlader, 1.500 daN; Rundballenzange; 45 kW",
+    "time": 0.91,
+    "fuelCons": 1.83,
+    "deprec": 8.19,
+    "interest": 2.38,
+    "others": 2,
+    "maintenance": 7.32,
+    "lubricants": 1.28,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "SEP2",
+  "name": "Mähen mit Mähaufbereiter",
+  "amount": ["13.00", "t"],
+  "steps": [{
+    "abr": "FA",
+    "description": "2,4 m; 45 kW",
+    "time": 0.64,
+    "fuelCons": 4.54,
+    "deprec": 5.56,
+    "interest": 1.35,
+    "others": 0.52,
+    "maintenance": 5.87,
+    "lubricants": 3.18,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "SEP2",
+  "name": "Wenden mit Kreiselzettwender",
+  "amount": "",
+  "steps": [{
+    "abr": "FA",
+    "description": "4,5 m; 45 kW",
+    "time": 0.43,
+    "fuelCons": 2.79,
+    "deprec": 2.4,
+    "interest": 0.61,
+    "others": 0.37,
+    "maintenance": 4.09,
+    "lubricants": 1.95,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "SEP2",
+  "name": "Schwaden",
+  "amount": "",
+  "steps": [{
+    "abr": "FA",
+    "description": "3,5 m; 45 kW",
+    "time": 0.51,
+    "fuelCons": 3.14,
+    "deprec": 2.92,
+    "interest": 0.74,
+    "others": 0.77,
+    "maintenance": 4.9,
+    "lubricants": 2.2,
+    "services": 0
+  }]
+}, {
+  "frequency": 1,
+  "month": "SEP2",
+  "name": "Ballen pressen und wickeln, Anwelksilage",
+  "amount": ["6.18", "t"],
+  "steps": [{
+    "abr": "KO",
+    "description": "Dienstleistung",
+    "time": 0,
+    "fuelCons": 0,
+    "deprec": 0,
+    "interest": 0,
+    "others": 0,
+    "maintenance": 0,
+    "lubricants": 0,
+    "services": 130
+  }]
+}, {
+  "frequency": 1,
+  "month": "SEP2",
+  "name": "Ballentransport, Anwelksilage",
+  "amount": ["6.20", "t"],
+  "steps": [{
+    "abr": "TR",
+    "description": "Doppelzug je 8 t, Dreiseitenkippanhänger; Frontlader, 1.500 daN; Rundballenzange; 45 kW",
+    "time": 0.85,
+    "fuelCons": 1.69,
+    "deprec": 7.58,
+    "interest": 2.21,
+    "others": 1.85,
+    "maintenance": 6.78,
+    "lubricants": 1.18,
+    "services": 0
+  }]
+}, {
+  "frequency": 0.33,
+  "month": "SEP2",
+  "name": "Kalk ab Feld streuen",
+  "amount": ["3.00", "t"],
+  "steps": [{
+    "abr": "BLA",
+    "description": "Frontlader, 1.500 daN; Mineraldüngerschaufel, 0,55 m³; 45 kW",
+    "time": 0.05,
+    "fuelCons": 0.24,
+    "deprec": 0.26,
+    "interest": 0.07,
+    "others": 0.04,
+    "maintenance": 0.31,
+    "lubricants": 0.17,
+    "services": 0
+  }, {
+    "abr": "FA",
+    "description": "Anhängeschleuderstreuer, 4 m³; 67 kW",
+    "time": 0.1,
+    "fuelCons": 0.83,
+    "deprec": 2.84,
+    "interest": 0.67,
+    "others": 0.32,
+    "maintenance": 1.09,
+    "lubricants": 0.58,
+    "services": 0
+  }]
+}, {
+  "frequency": 0.5,
+  "month": "SEP2",
+  "name": "Stoppelbearbeitung, flach, schräg (30°)",
+  "amount": "",
+  "steps": [{
+    "abr": "FA",
+    "description": "2,5 m; 67 kW",
+    "time": 0.42,
+    "fuelCons": 3.82,
+    "deprec": 3.15,
+    "interest": 0.91,
+    "others": 0.65,
+    "maintenance": 5.33,
+    "lubricants": 2.67,
+    "services": 0
+  }]
+}]

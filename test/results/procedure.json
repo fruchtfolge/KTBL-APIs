@@ -1,0 +1,28 @@
+{
+  "procedureId": "290",
+  "machCombinationId": "2493",
+  "machCombination": "4 m; 102 kW",
+  "size": "1",
+  "resistance": "leicht",
+  "distance": "1",
+  "amount": "130.0",
+  "workingWidth": "4.0",
+  "name": "Säen von Gerste mit Kreiselegge und Sämaschine",
+  "procedureGroupId": "3",
+  "procedureGroup": "Bestellung",
+  "steps": [{
+    "description": "4 m; 102 kW",
+    "name": "Feldarbeit",
+    "time": 1.03,
+    "areaOutput": 1.49,
+    "deprec": 17.36,
+    "interest": 4.51,
+    "others": 1.72,
+    "maintenance": 17.48,
+    "lubricants": 8.41,
+    "fuelCons": 12.01,
+    "abr": "",
+    "amount": 130,
+    "workingWidth": 4
+  }]
+}
