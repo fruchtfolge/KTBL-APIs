@@ -3,6 +3,11 @@
 The KTBL Database provides information about time consumption, machine costs and diesel costs for selected production processes within agriculture.
 Currently, there is no native API implemented on their site. This repo provides a (scraping) client aimed at filling that gap.
 
+## Installation
+```
+npm install ktbl-apis
+```
+
 ## Methods
 
 ### ```cropProcedures(options)```
@@ -19,8 +24,10 @@ Optional query parameters:
 ```distance``` Distances in km -> 1,2,3,4,5,6,10,15,20,30 km
 ```getIds``` Boolean. Whether to also query the internal KTBL IDs (used in the `procedure` method) for the machine combinations. Significantly slows down the response time.
 
-Example request:
+Example:
 ```js
+const ktbl = require('ktbl-apis')
+
 // Query crop procedures
 ktbl.cropProcedures({
   'crop': 'Ackergras - Anwelksilage',
@@ -86,8 +93,10 @@ Options is an object with the following minimum properties:
 ```amount``` See vocab/machCombiObject.json for available options.
 ```workingWidth``` See vocab/machCombiObject.json for available options.
 
-Example request:
+Example:
 ```js
+const ktbl = require('ktbl-apis')
+
 // Query a single working step
 ktbl.procedure({
   procedureGroupId: '3',
