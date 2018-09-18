@@ -2,7 +2,6 @@ const assert = require('assert').strict
 const fs = require('fs')
 const ktbl = require('../index.js')
 
-/*
 // Query a single working step
 ktbl.procedure({
   procedureGroupId: '3',
@@ -50,7 +49,8 @@ ktbl.cropProcedures({
 .catch(err => {
   console.log(err)
 })
-*/
+
+/*
 ktbl.cropList()
 .then(res => {
   console.log(res)
@@ -58,3 +58,4 @@ ktbl.cropList()
 .catch(err => {
   console.log(err)
 })
+*/
