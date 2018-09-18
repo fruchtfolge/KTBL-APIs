@@ -14,15 +14,20 @@ npm install ktbl-apis
 
 Returns an array of objects with all standard working procedures defined for a given crop / cropping system combination
 `Options` is an object that takes the following minimum query parameters:
+
 ```crop``` The crop you want information about -> see vocab/CropObject.json for options
+
 ```system``` The cropping system you want information about -> see vocab/CropObject.json for options
 
+
 Optional query parameters:
-```size``` Plot sizes in ha -> 1,2,5,10,20,40,80 ha
-```yield``` Yield parameters available for the specified crop -> see vocab/CropObject.json for options
-```mechanisation``` Mechanisation utilised -> 45, 67, 83, 102, 120, 200, 230 kW
-```distance``` Distances in km -> 1,2,3,4,5,6,10,15,20,30 km
-```getIds``` Boolean. Whether to also query the internal KTBL IDs (used in the `procedure` method) for the machine combinations. Significantly slows down the response time.
+
+```size``` Plot sizes in ha -> 1,2,5,10,20,40,80 ha  
+```yield``` Yield parameters available for the specified crop -> see vocab/CropObject.json for options  
+```mechanisation``` Mechanisation utilised -> 45, 67, 83, 102, 120, 200, 230 kW  
+```distance``` Distances in km -> 1,2,3,4,5,6,10,15,20,30 km  
+```getIds``` Boolean. Whether to also query the internal KTBL IDs (used in the `procedure` method) for the machine combinations. Significantly slows down the response time.  
+
 
 Example:
 ```js
@@ -84,14 +89,16 @@ ktbl.cropProcedures({
 Returns information on a single working procedure. See vocab/machCombiObject.json for available combinations.
 
 Options is an object with the following minimum properties:
-```procedureGroup``` See vocab/machCombiObject.json for available options.
-```procedure``` See vocab/machCombiObject.json for available options.
+
+```procedureGroup``` See vocab/machCombiObject.json for available options.  
+```procedure``` See vocab/machCombiObject.json for available options.  
 ```machCombination``` See vocab/machCombiObject.json for available options.
 ```size``` Plot sizes in ha -> 1,2,5,10,20,40,80 ha
-```resistance``` See vocab/machCombiObject.json for available options.
-```distance``` Distances in km -> 1,2,3,4,5,6,10,15,20,30 km
-```amount``` See vocab/machCombiObject.json for available options.
-```workingWidth``` See vocab/machCombiObject.json for available options.
+```resistance``` See vocab/machCombiObject.json for available options.  
+```distance``` Distances in km -> 1,2,3,4,5,6,10,15,20,30 km  
+```amount``` See vocab/machCombiObject.json for available options.  
+```workingWidth``` See vocab/machCombiObject.json for available options.  
+
 
 Example:
 ```js
