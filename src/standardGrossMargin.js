@@ -6,7 +6,7 @@ const { JSDOM } = jsdom
 
 module.exports = {
   getSDB(crop,region) {
-    let cropId
+    let sdbCrop
     return new Promise((resolve,reject) => {
       osmosis
         .get('https://daten.ktbl.de/sdb/welcome.do')
@@ -20,10 +20,26 @@ module.exports = {
           const options = nodes.map(option => {
             return option.childNodes[0].textContent.trim()
           })
-          
-          console.log(options);
+          sdbCrop = this.mapCrop(crop, options)
+          if (sdbCrop) return next(context, data)
+          else return reject(`No suitable SDB crop found for ${crop}`)
         })
-        //ectedMerkmale=Weichweizen+und+Spelz&selectedAction=weiter
+        .get('https://daten.ktbl.de/sdb/source.do', {
+          'selectedMerkmale': sdbCrop,
+          'selectedAction': 'weiter'
+        })
+        .get('https://daten.ktbl.de/sdb/source.do', {
+          'selectedRegion': region,
+          'selectedAction': 'weiter'
+        })
+        .get('https://daten.ktbl.de/sdb/source.do', {
+          'selectedWiJahr': year,
+          'selectedAction': 'weiter'
+        })
+        .get('https://daten.ktbl.de/sdb/source.do', {
+          'selectedAction': detergebnis,
+          'selectedAction': 'weiter'
+        })
         .then(function(context, data, next) {
           const dom = new JSDOM(context)
           fs.writeFileSync('test.html', dom.serialize(), 'utf8')
