@@ -130,9 +130,7 @@ const names = [
   "Andere Handelsgewächse"
 ]
 
-
-
-ktbl.standardGrossMargin.getSDB()
+ktbl.standardGrossMargin.getSDB('Ackerbohnen - Erbsen - Gemenge')
 .then(res => {
   console.log(res);
 })
