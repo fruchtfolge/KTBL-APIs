@@ -1,0 +1,188 @@
+{
+  "revenues": [{
+    "name": "Ackerbohnen, ökologisch",
+    "amount": {
+      "value": 1.97,
+      "unit": "t/ha"
+    },
+    "price": {
+      "value": 451,
+      "unit": "€/t"
+    },
+    "total": {
+      "value": 888.47,
+      "unit": "€/ha"
+    }
+  }, {
+    "name": "Futtererbsen, ökologisch",
+    "amount": {
+      "value": 1.77,
+      "unit": "t/ha"
+    },
+    "price": {
+      "value": 457,
+      "unit": "€/t"
+    },
+    "total": {
+      "value": 808.89,
+      "unit": "€/ha"
+    }
+  }],
+  "directCosts": [{
+    "name": "Sommerackerbohnen, Z-Saatgut, ökologisch",
+    "amount": {
+      "value": 110,
+      "unit": "kg/ha"
+    },
+    "price": {
+      "value": 0.98,
+      "unit": "€/kg"
+    },
+    "total": {
+      "value": 107.8,
+      "unit": "€/ha"
+    }
+  }, {
+    "name": "Sommerfuttererbsen, Z-Saatgut, ökologisch",
+    "amount": {
+      "value": 110,
+      "unit": "kg/ha"
+    },
+    "price": {
+      "value": 1.23,
+      "unit": "€/kg"
+    },
+    "total": {
+      "value": 135.3,
+      "unit": "€/ha"
+    }
+  }, {
+    "name": "Kohlensaurer Kalk",
+    "amount": {
+      "value": 1,
+      "unit": "t/ha"
+    },
+    "price": {
+      "value": 40.7,
+      "unit": "€/t"
+    },
+    "total": {
+      "value": 40.7,
+      "unit": "€/ha"
+    }
+  }, {
+    "name": "Hagelversicherung",
+    "amount": {
+      "value": 1700,
+      "unit": "€/ha"
+    },
+    "price": {
+      "value": 18.51,
+      "unit": "€/1000 €"
+    },
+    "total": {
+      "value": 31.47,
+      "unit": "€/ha"
+    }
+  }, {
+    "name": "Zinskosten (3 Monate)",
+    "amount": {
+      "value": 78.82,
+      "unit": "€/ha"
+    },
+    "price": {
+      "value": 0.03,
+      "unit": "€/€"
+    },
+    "total": {
+      "value": 2.36,
+      "unit": "€/ha"
+    }
+  }],
+  "variableCosts": [{
+    "name": "Variable Maschinenkosten",
+    "amount": {
+      "value": 0,
+      "unit": ""
+    },
+    "price": {
+      "value": 0,
+      "unit": ""
+    },
+    "total": {
+      "value": 188.2,
+      "unit": "€/ha"
+    }
+  }, {
+    "name": "Variable Lohnkosten",
+    "amount": {
+      "value": 0,
+      "unit": "AKh/ha"
+    },
+    "price": {
+      "value": 13,
+      "unit": "€/Akh"
+    },
+    "total": {
+      "value": 0,
+      "unit": "€/ha"
+    }
+  }, {
+    "name": "Dienstleistungen",
+    "amount": {
+      "value": 0,
+      "unit": ""
+    },
+    "price": {
+      "value": 0,
+      "unit": ""
+    },
+    "total": {
+      "value": 0,
+      "unit": "€/ha"
+    }
+  }, {
+    "name": "Zinskosten (3 Monate)",
+    "amount": {
+      "value": 47.05,
+      "unit": "€/ha"
+    },
+    "price": {
+      "value": 0.03,
+      "unit": "€/€"
+    },
+    "total": {
+      "value": 1.42,
+      "unit": "€/ha"
+    }
+  }],
+  "fixCosts": [{
+    "name": "Fixe Maschinenkosten",
+    "amount": {
+      "value": 0,
+      "unit": ""
+    },
+    "price": {
+      "value": 0,
+      "unit": ""
+    },
+    "total": {
+      "value": 247.05,
+      "unit": "€/ha"
+    }
+  }, {
+    "name": "Fixe Lohnkosten",
+    "amount": {
+      "value": 8.02,
+      "unit": "AKh/ha"
+    },
+    "price": {
+      "value": 20,
+      "unit": "€/Akh"
+    },
+    "total": {
+      "value": 160.4,
+      "unit": "€/ha"
+    }
+  }]
+}
