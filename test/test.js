@@ -1,4 +1,4 @@
-const assert = require('assert').strict
+const assert = require('assert')
 const fs = require('fs')
 const ktbl = require('../index.js')
 
@@ -85,55 +85,26 @@ ktbl.cropList()
 .catch(err => {
   console.log(err)
 })
-
+*/
 
 ktbl.contributionMargin('ökologisch', 'Ackerbohnen - Erbsen - Gemenge', 'nichtwendend, ohne Düngung')
-.then(res => {
-  console.log(res)
+.then(result => {
+  console.log(result);
+  const comparison = JSON.parse(fs.readFileSync('test/results/contributionMargin.json','utf-8'))
+  assert.deepStrictEqual(comparison, result)
+})
+.catch(err => {
+  console.log(err)
+})
+
+
+/*
+ktbl.standardGrossMargin.getSDB('Ackerbohnen - Erbsen - Gemenge')
+.then(result => {
+  const comparison = JSON.parse(fs.readFileSync('test/results/standardGrossMargin.json','utf-8'))
+  assert.deepStrictEqual(comparison, result)
 })
 .catch(err => {
   console.log(err)
 })
 */
-const names = [
-  "Weichweizen und Spelz",
-  "Hartweizen",
-  "Roggen",
-  "Gerste",
-  "Hafer",
-  "Körnermais",
-  "Sonstiges Getreide",
-  "Eiweißpflanzen",
-  "Raps und Rübsen",
-  "Sonnenblumen",
-  "Soja",
-  "Leinsamen (Öllein)",
-  "Andere Ölfrüchte",
-  "Kartoffeln",
-  "Zuckerrüben",
-  "Futterhackfrüchte",
-  "Ackerwiesen und -weiden",
-  "Grünmais (Silagemais)",
-  "Sonstige Futterpflanzen",
-  "Grünland und Weiden",
-  "Ungepflegtes Weideland",
-  "Sämereien und Pflanzgut",
-  "Sonstige Ackerkulturen",
-  "Schwarzbrache (ohne Beihilfe)",
-  "Schwarzbrache (Stilllegung)",
-  "Tabak",
-  "Hopfen",
-  "Flachs",
-  "Hanf",
-  "Andere Textilpflanzen",
-  "Heil-, Duft- und Gewürzpflanzen",
-  "Andere Handelsgewächse"
-]
-
-ktbl.standardGrossMargin.getSDB('Ackerbohnen - Erbsen - Gemenge')
-.then(res => {
-  console.log(res);
-})
-.catch(err => {
-  console.log(err)
-})
