@@ -8,14 +8,15 @@ Currently, there is no native API for the calculated data implemented on their s
 npm install ktbl-apis
 ```
 
-## Methods
+## Table of content
 
 - [```cropList([options])```](#cropList([options]))
-- [```contributionMargin(options)```](#contributionMargin(options))
-- [```standardGrossMargin(crop, region)```](#standardGrossMargin(crop,-region))
-- [```cropProcedures(options)```](#cropProcedures(options))
-- [```procedure(options)```](#procedure(options))
+- [```contributionMargin(options)```](#contributionmarginoptions)
+- [```standardGrossMargin(crop, region)```](#standardgrossmargincrop-region)
+- [```cropProcedures(options)```](#cropproceduresoptions)
+- [```procedure(options)```](#procedureoptions)
 
+## API
 
 ### ```cropList([options])```
 Returns an array of strings with all available options for the query.  
