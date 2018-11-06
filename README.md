@@ -10,11 +10,12 @@ npm install ktbl-apis
 
 ## Table of content
 
-- [```cropList([options])```](#cropListoptions)
-- [```contributionMargin(options)```](#contributionmarginoptions)
-- [```standardGrossMargin(crop, region)```](#standardgrossmargincrop-region)
-- [```cropProcedures(options)```](#cropproceduresoptions)
-- [```procedure(options)```](#procedureoptions)
+- Methods
+  - [```cropList([options])```](#cropListoptions)
+  -   [```contributionMargin(options)```](#contributionmarginoptio  ns)
+  - [```standardGrossMargin(crop,   region)```](#standardgrossmargincrop-region)
+  - [```cropProcedures(options)```](#cropproceduresoptions)
+  - [```procedure(options)```](#procedureoptions)
 
 ## API
 
