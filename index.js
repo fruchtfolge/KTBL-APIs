@@ -5,17 +5,17 @@ const contributionMargin = require('./src/contributionMargin')
 const standardGrossMargin = require('./src/standardGrossMargin')
 
 module.exports = {
-  async cropList(farmingType, crop, system) {
-    if (!farmingType && !crop && !system) {
+  async cropList(options) {
+    if (!options) {
       return ['konventionell/integriert', 'ökologisch']
-    } else if (farmingType && !crop && !system) {
-      const crops = await cropList.getCrops(farmingType)
+    } else if (options.farmingType && !options.crop && !options.system) {
+      const crops = await cropList.getCrops(options.farmingType)
       return crops
-    } else if (farmingType && crop && !system) {
-      const systems = await cropList.getSystemsForCrop(farmingType, crop)
+    } else if (options.farmingType && options.crop && !options.system) {
+      const systems = await cropList.getSystemsForCrop(options.farmingType, options.crop)
       return systems
-    } else if (farmingType && crop && system) {
-      const specifications = await cropList.getSpecificationsForCrop(farmingType, crop, system)
+    } else if (options.farmingType && options.crop && options.system) {
+      const specifications = await cropList.getSpecificationsForCrop(options.farmingType, options.crop, options.system)
       return specifications
     } else {
       throw new Error('User request error.')
@@ -23,8 +23,16 @@ module.exports = {
   },
   procedure,
   cropProcedures,
-  contributionMargin(farmingType, crop, system) {
-    return contributionMargin.getKTBLcontributionMargin(farmingType, crop, system)
+  contributionMargin(options) {
+    if (!options) {
+      return new Error('No options')
+    }
+    return contributionMargin.getKTBLcontributionMargin(options.farmingType, options.crop, options.system)
   },
-  standardGrossMargin
+  standardGrossMargin(crop, region) {
+    if (!crop) {
+      return new Error('No crop')
+    }
+    return standardGrossMargin.getSDB(crop, region)
+  }
 }

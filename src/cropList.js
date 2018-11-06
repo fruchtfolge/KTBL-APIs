@@ -2,23 +2,6 @@ const osmosis = require('osmosis')
 const async = require('async')
 
 module.exports = {
-  async detail(farmingType, crop, system) {
-    if (!farmingType && !crop && !system) {
-      return ['konventionell/integriert', 'ökologisch']
-    } else if (farmingType && !crop && !system) {
-      console.log(this);
-      const crops = await this.getCrops(farmingType)
-      return crops
-    } else if (farmingType && crop && !system) {
-      const systems = await this.getSystemsForCrop(farmingType, crop)
-      return systems
-    } else if (farmingType && crop && system) {
-      const specifications = await this.getSpecificationsForCrop(farmingType, crop, system)
-      return specifications
-    } else {
-      throw new Error('User request error.')
-    }
-  },
   async getCrops(farmingType) {
     return new Promise(resolve => {
       osmosis
@@ -126,9 +109,6 @@ module.exports = {
 
           resolve(res)
         })
-        .log(console.log)
-        .error(console.log)
-        .debug(console.log)
     })
   }
 }

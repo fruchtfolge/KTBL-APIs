@@ -104,15 +104,15 @@ module.exports = {
       data = {
         name: td[0].innerHTML.trim(),
         amount: {
-          value: Number(td[1].innerHTML.replace(/&nbsp;/g, ' ').trim().replace(',','.')),
+          value: Number(td[1].innerHTML.replace(/&nbsp;/g, ' ').trim().replace('.','').replace(',','.')),
           unit: td[2].innerHTML.trim()
         },
         price: {
-          value: Number(td[3].innerHTML.replace(/&nbsp;/g, ' ').trim().replace(',','.')),
+          value: Number(td[3].innerHTML.replace(/&nbsp;/g, ' ').trim().replace('.','').replace(',','.')),
           unit: td[4].innerHTML.trim()
         },
         total: {
-          value: Number(td[5].innerHTML.trim().replace(/&nbsp;/g, ' ').split(/\s/)[0].replace('.','').replace(',','.')),
+          value: Number(td[5].innerHTML.trim().replace(/&nbsp;/g, ' ').split(/\s/)[0].replace('.','').replace('.','').replace(',','.')),
           unit: td[5].innerHTML.trim().replace(/&nbsp;/g, ' ').split(/\s/)[1]
         }
       }
