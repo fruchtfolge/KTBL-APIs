@@ -118,6 +118,15 @@ ktbl.contributionMargin({
 // Query standard gross margin for a crop
 ktbl.standardGrossMargin('Ackerbohnen - Erbsen - Gemenge')
 .then(result => {
+  const comparison = JSON.parse(fs.readFileSync('test/results/standardGrossMarginRegions.json','utf-8'))
+  assert.deepStrictEqual(comparison, result)
+})
+.catch(err => {
+  console.log(err)
+})
+
+ktbl.standardGrossMargin('Ackerbohnen - Erbsen - Gemenge', 'Deutschland')
+.then(result => {
   const comparison = JSON.parse(fs.readFileSync('test/results/standardGrossMargin.json','utf-8'))
   assert.deepStrictEqual(comparison, result)
 })

@@ -151,7 +151,7 @@ Returns the prices, yields, direct costs and standard gross margins from 2001 - 
 As the standard gross margin is not available for all crops that are present in the other methods, a more or less intelligent guess is made which crop (or crop group) is most suitable for the query.
 
 - crop *\<string\>*
-- region *\<string\>* **Default:** 'Deutschland'
+- region *\<string\>* **Default:** All available regions
 
 Results are obtained from the [KTBL SDB Databse Tool](https://daten.ktbl.de/sdb/welcome.do).
 
