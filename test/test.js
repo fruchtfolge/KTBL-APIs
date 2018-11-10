@@ -115,6 +115,20 @@ ktbl.contributionMargin({
   console.log(err)
 })
 
+// also test cases where only one revenue stream exists
+ktbl.contributionMargin({
+  farmingType: 'konventionell/integriert',
+  crop: 'Möhren',
+  system: 'Frischmarktware, Waschmöhre, Dammanbau'
+})
+.then(result => {
+  const comparison = JSON.parse(fs.readFileSync('test/results/contributionMarginSingle.json','utf-8'))
+  assert.deepStrictEqual(comparison, result)
+})
+.catch(err => {
+  console.log(err)
+})
+
 // Query standard gross margin for a crop
 ktbl.standardGrossMargin('Ackerbohnen - Erbsen - Gemenge')
 .then(result => {
