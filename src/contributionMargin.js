@@ -82,7 +82,7 @@ module.exports = {
     contribution_margin.fixCosts = []
 
     // Leistungen
-    for (var i = 1; i < end_points[0] - 1; i++) {
+    for (var i = 1; i < end_points[0]; i++) {
       save(i, 'revenues')
     }
     // Direktkosten
