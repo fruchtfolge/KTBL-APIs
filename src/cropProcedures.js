@@ -45,7 +45,7 @@ module.exports = function cropProcedures(options) {
               'cookie': data.cookie,
               'referer': 'https://daten.ktbl.de/vrpflanze/prodverfahren/showResult.action'
             })
-            .then((context, data, next) => {
+            .then((context) => {
               next(context, data, next)
             })
         } else {
@@ -63,7 +63,7 @@ module.exports = function cropProcedures(options) {
               'cookie': data.cookie,
               'referer': 'https://daten.ktbl.de/vrpflanze/prodverfahren/showResult.action'
             })
-            .then((context, data, next) => {
+            .then((context) => {
               next(context, data, next)
             })
         } else {
@@ -82,7 +82,7 @@ module.exports = function cropProcedures(options) {
               'cookie': data.cookie,
               'referer': 'https://daten.ktbl.de/vrpflanze/prodverfahren/showResult.action'
             })
-            .then((context, data, next) => {
+            .then((context) => {
               next(context, data, next)
             })
         } else {

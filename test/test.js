@@ -23,6 +23,7 @@ ktbl.procedure({
   console.log(err)
 })
 
+
 // Query crop procedures
 ktbl.cropProcedures({
   'crop': 'Ackergras - Anwelksilage',
@@ -31,6 +32,23 @@ ktbl.cropProcedures({
 })
 .then(result => {
   //fs.writeFileSync('test/results/cropProcedures.json', JSON.stringify(result), 'utf-8')
+  const comparison = JSON.parse(fs.readFileSync('test/results/cropProcedures.json','utf-8'))
+  assert.deepStrictEqual(comparison, result)
+})
+.catch(err => {
+  console.log(err)
+})
+
+ktbl.cropProcedures({ 
+  type: 'konventionell/integriert',
+  crop: 'Ackergras - Bodenheu',
+  system: 'Ballen',
+  mechanisation: '67',
+  distance: '2',
+  getIds: true
+})
+.then(result => {
+  fs.writeFileSync('test/results/cropProceduresMech.json', JSON.stringify(result), 'utf-8')
   const comparison = JSON.parse(fs.readFileSync('test/results/cropProcedures.json','utf-8'))
   assert.deepStrictEqual(comparison, result)
 })
