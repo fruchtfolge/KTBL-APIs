@@ -1,6 +1,6 @@
 {
   "name": "ktbl-apis",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A (scraping) API wrapper for the KTBL field working procedures",
   "main": "index.js",
   "directories": {
