@@ -44,12 +44,12 @@ module.exports = {
               region = region.replace('ß', '%DF').replace('ä', '%E4').replace('ö', '%F6').replace('ü', '%FC').replace('Ü', '%DC').replace(/\s/g, '+')
               data.regionString += `selectedRegion=${region}&`
             })
-            return next(context,data)
           }
+          return next(context,data)
         })
-        .get((context, data) => `https://daten.ktbl.de/sdb/regionen.do?${data.regionString}selectedAction=weiter` ) 
+        .get((context, data) => `https://daten.ktbl.de/sdb/regionen.do?${data.regionString}selectedAction=weiter` )
         .set('years', ['.falsefalse'])
-        .then((context,data,next) => { 
+        .then((context,data,next) => {
           data.yearQuery = ''
           data.years.forEach(year => {
             data.yearQuery += `selectedWiJahr=${qs.escape(year)}&`
@@ -81,7 +81,7 @@ module.exports = {
               next(ctx,data)
             }
           }
-          
+
         })
         .then((context, data, next) => {
           //console.log('bla',data.results);
@@ -115,7 +115,7 @@ module.exports = {
   scrape(context, crop, match) {
     const dom = new JSDOM(context)
     results = []
-    
+
     const tbodys = dom.window.document.querySelectorAll('tbody')
     for (var i = 8; i < tbodys.length - 1; i++) {
       results.push({
