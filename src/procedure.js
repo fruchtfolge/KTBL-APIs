@@ -46,10 +46,10 @@ module.exports = function procedure(options) {
       // Detailed options
       .post('https://daten.ktbl.de/feldarbeit/entry.html', {
         'flaecheID': options.size,
-        'bodenID': options.resistance,
+        // 'bodenID': options.resistance,
         'hofID': options.distance,
         'mengeID': options.amount,
-        'arbeit': options.workingWidth,
+        // 'arbeit': options.workingWidth,
         'state': '5'
       })
       // scrape
@@ -59,7 +59,6 @@ module.exports = function procedure(options) {
         const procedureGroupNode = dom.window.document.getElementsByName('hgId')[0]
         const procedureNameNode = dom.window.document.getElementsByName('gId')[0]
         const machCombinationNode = dom.window.document.getElementsByName('avId')[0]
-
 
         if (!procedureNameNode) return reject('Error in request, possibly query parameters dont match')
         const procedure = procedureNameNode.selectedOptions[0].text
