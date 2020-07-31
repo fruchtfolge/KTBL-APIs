@@ -3,7 +3,7 @@ const async = require('async')
 
 module.exports = {
   async getCrops(farmingType) {
-    return new Promise(resolve => {
+    return new Promise((resolve,reject) => {
       osmosis
         .get('https://daten.ktbl.de/vrpflanze/home.action')
         .find('div.aktionskastenUnten > a')
@@ -23,11 +23,12 @@ module.exports = {
           })
           resolve(res)
         })
+        .error(reject)
     })
   },
 
   async getSystemsForCrop(farmingType,crop) {
-    return new Promise(resolve => {
+    return new Promise((resolve,reject) => {
       osmosis
         .get('https://daten.ktbl.de/vrpflanze/home.action')
         .find('div.aktionskastenUnten > a')
@@ -53,6 +54,7 @@ module.exports = {
           })
           resolve(res)
         })
+        .error(reject)
     })
   },
 
