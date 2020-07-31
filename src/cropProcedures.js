@@ -114,14 +114,14 @@ module.exports = function cropProcedures(options) {
               var step = {};
               step.abr = cellsStep[3].innerHTML.trim();
               step.description = cellsStep[4].innerHTML.trim();
-              step.time = parseFloat(cellsStep[6].innerHTML.trim().replace(',', '.'));
-              step.fuelCons = parseFloat(cellsStep[7].innerHTML.trim().replace(',', '.'));
-              step.deprec = parseFloat(cellsStep[8].innerHTML.trim().replace(',', '.'));
-              step.interest = parseFloat(cellsStep[9].innerHTML.trim().replace(',', '.'));
-              step.others = parseFloat(cellsStep[10].innerHTML.trim().replace(',', '.'));
-              step.maintenance = parseFloat(cellsStep[11].innerHTML.trim().replace(',', '.'));
-              step.lubricants = parseFloat(cellsStep[12].innerHTML.trim().replace(',', '.'));
-              step.services = parseFloat(cellsStep[13].innerHTML.trim().replace(',', '.'));
+              step.time = parseFloat(cellsStep[6].innerHTML.trim().replace('.', '').replace(',', '.'));
+              step.fuelCons = parseFloat(cellsStep[7].innerHTML.trim().replace('.', '').replace(',', '.'));
+              step.deprec = parseFloat(cellsStep[8].innerHTML.trim().replace('.', '').replace(',', '.'));
+              step.interest = parseFloat(cellsStep[9].innerHTML.trim().replace('.', '').replace(',', '.'));
+              step.others = parseFloat(cellsStep[10].innerHTML.trim().replace('.', '').replace(',', '.'));
+              step.maintenance = parseFloat(cellsStep[11].innerHTML.trim().replace('.', '').replace(',', '.'));
+              step.lubricants = parseFloat(cellsStep[12].innerHTML.trim().replace('.', '').replace(',', '.'));
+              step.services = parseFloat(cellsStep[13].innerHTML.trim().replace('.', '').replace(',', '.'));
               entries.steps.push(step);
               j++;
             }
