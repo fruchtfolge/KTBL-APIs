@@ -5,6 +5,8 @@ const jsdom = require('jsdom')
 const fs = require('fs')
 const { JSDOM } = jsdom
 
+let pages = 0 
+
 module.exports = {
   getSDB(crop,region) {
     return new Promise((resolve,reject) => {
@@ -36,6 +38,7 @@ module.exports = {
         .then((context,data,next) => {
           if (region) {
             data.regionString = `selectedRegion=${region}&`
+            console.log(data.regionString);
           } else {
             data.regionString = ''
             data.regions = data.regions.forEach(region => {
@@ -65,6 +68,8 @@ module.exports = {
           recurse(context)
           // recursively scrape through sub-pages
           function recurse(ctx) {
+            pages++
+            console.log(pages);
             const arrow = ctx.find('input[name="selectedAction"][value=">"]')
             if (arrow.length > 0) {
               osmosis

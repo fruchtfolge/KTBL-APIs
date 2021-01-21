@@ -5,13 +5,13 @@ const fs = require('fs')
 const { JSDOM } = jsdom
 
 module.exports = {
-  getKTBLcontributionMargin(type, crop, system) {
-    let cropId
+  getKTBLcontributionMargin(type, crop, system, size, distance, mechanisation) {
+    let cropId, cookie
     return new Promise((resolve,reject) => {
       osmosis
           .get('http://daten.ktbl.de/dslkrpflanze/?tx_ktblsso_checktoken[token]=')
           .then((context, data, next) => {
-            data.cookie = context.request.headers['cookie'];
+            cookie = context.request.headers['cookie'];
             next(context, data);
           })
           .post('https://daten.ktbl.de/dslkrpflanze/postHv.html', {
@@ -41,15 +41,62 @@ module.exports = {
               'cropSysId': cropId
             })
             .config('headers', {
-                'cookie': data.cookie
+                'cookie': cookie
             })
-            .then((context, data) => {
-              next(context, data, next)
-            })
+            .then(next)
           })
-          .then((context, data) => {
+          .then((context,data,next) => {
+            if (size) {
+              osmosis.post('https://daten.ktbl.de/dslkrpflanze/postHv.html', {
+                'areaSize': size,
+                'state': 9,
+                'refineSelection': true
+              })
+              .config('headers', {
+                'cookie': cookie,
+                'referer': 'https://daten.ktbl.de/dslkrpflanze/postHv.html'
+              })
+              .then(next)
+            } else {
+              next(context, data)
+            }
+          })
+          .then((context,data,next) => {
+            if (mechanisation) {
+              osmosis.post('https://daten.ktbl.de/dslkrpflanze/postHv.html', {
+                'mechanics': mechanisation,
+                'state': 4,
+                'refineSelection': true
+              })
+              .config('headers', {
+                'cookie': cookie,
+                'referer': 'https://daten.ktbl.de/dslkrpflanze/postHv.html'
+              })
+              .then(next)
+            } else {
+              next(context, data)
+            }
+          })
+          .then((context,data,next) => {
+            if (distance) {
+              osmosis.post('https://daten.ktbl.de/dslkrpflanze/postHv.html', {
+                'distance': distance,
+                'state': 4,
+                'refineSelection': true
+              })
+              .config('headers', {
+                'cookie': cookie,
+                'referer': 'https://daten.ktbl.de/dslkrpflanze/postHv.html'
+              })
+              .then(next)
+            } else {
+              next(context, data, next)
+            }
+          })
+          .then((context) => {
             const dom = new JSDOM(context);
-            resolve(this.scrape(dom.window.document))
+            const data = this.scrape(dom.window.document)
+            resolve(data)
           })
     })
   },
@@ -75,12 +122,21 @@ module.exports = {
 
     const contribution_margin = {}
 
-
     contribution_margin.revenues = []
     contribution_margin.directCosts = []
     contribution_margin.variableCosts = []
     contribution_margin.fixCosts = []
-
+    
+    // get number of rows
+    const kea_rows = document.querySelector('#tabs-4 > table > tbody').children.length
+    contribution_margin.diesel = Number(document.querySelector(`#tabs-4 > table > tbody > tr:nth-child(${kea_rows}) > td:nth-child(7)`).innerHTML.replace(/&nbsp;/g, ' ').trim().replace('.','').replace(',','.'))
+    
+    contribution_margin.energyReq = {
+      operatingMaterials: Number(document.querySelector(`#tabs-4 > table > tbody > tr:nth-child(${kea_rows}) > td:nth-child(8)`).innerHTML.replace(/&nbsp;/g, ' ').trim().replace('.','').replace(',','.')),
+      operatingResources: Number(document.querySelector(`#tabs-4 > table > tbody > tr:nth-child(${kea_rows}) > td:nth-child(9)`).innerHTML.replace(/&nbsp;/g, ' ').trim().replace('.','').replace(',','.')),
+      machinesBuildings: Number(document.querySelector(`#tabs-4 > table > tbody > tr:nth-child(${kea_rows}) > td:nth-child(10)`).innerHTML.replace(/&nbsp;/g, ' ').trim().replace('.','').replace(',','.')),
+      sum: Number(document.querySelector(`#tabs-4 > table > tbody > tr:nth-child(${kea_rows}) > td:nth-child(11)`).innerHTML.replace(/&nbsp;/g, ' ').trim().replace('.','').replace(',','.'))
+    }
     // Leistungen
     for (var i = 1; i < end_points[0]; i++) {
       save(i, 'revenues')

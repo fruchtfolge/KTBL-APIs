@@ -9,14 +9,11 @@ module.exports = {
     if (!options) {
       return ['konventionell/integriert', 'ökologisch']
     } else if (options.farmingType && !options.crop && !options.system) {
-      const crops = await cropList.getCrops(options.farmingType)
-      return crops
+      return await cropList.getCrops(options.farmingType)
     } else if (options.farmingType && options.crop && !options.system) {
-      const systems = await cropList.getSystemsForCrop(options.farmingType, options.crop)
-      return systems
+      return await cropList.getSystemsForCrop(options.farmingType, options.crop)
     } else if (options.farmingType && options.crop && options.system) {
-      const specifications = await cropList.getSpecificationsForCrop(options.farmingType, options.crop, options.system)
-      return specifications
+      return await cropList.getSpecificationsForCrop(options.farmingType, options.crop, options.system)
     } else {
       throw new Error('User request error.')
     }
@@ -27,7 +24,7 @@ module.exports = {
     if (!options) {
       return new Error('No options')
     }
-    return contributionMargin.getKTBLcontributionMargin(options.farmingType, options.crop, options.system)
+    return contributionMargin.getKTBLcontributionMargin(options.farmingType, options.crop, options.system, options.size, options.distance, options.mechanisation)
   },
   standardGrossMargin(crop, region) {
     if (!crop) {

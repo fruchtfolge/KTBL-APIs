@@ -1,8 +1,8 @@
 const osmosis = require('osmosis')
-const libxmljs = require('libxmljs-dom')
 const jsdom = require('jsdom')
 const { JSDOM } = jsdom
 const async = require('async');
+// const fs = require('fs')
 
 module.exports = function cropProcedures(options) {
   return new Promise((resolve, reject) => {
@@ -48,6 +48,7 @@ module.exports = function cropProcedures(options) {
             .then((context) => {
               next(context, data, next)
             })
+            .error(reject)
         } else {
           next(context, data, next)
         }
@@ -66,6 +67,7 @@ module.exports = function cropProcedures(options) {
             .then((context) => {
               next(context, data, next)
             })
+            .error(reject)
         } else {
           next(context, data, next)
         }
@@ -85,122 +87,135 @@ module.exports = function cropProcedures(options) {
             .then((context) => {
               next(context, data, next)
             })
+            .error(reject)
         } else {
           next(context, data)
         }
       })
       // scrape and get machine id's
       .then((context, data, next) => {
-        const dom = new JSDOM(context);
-        var rows = dom.window.document.querySelectorAll('#tab-1 > #avForm > div:nth-child(1) > table > tbody > tr:nth-child(n+4)');
+        try {
+          const dom = new JSDOM(context);
+          //fs.writeFileSync('test.html',dom.window.document.getElementsByTagName('html')[0].innerHTML)
+          var rows = dom.window.document.querySelectorAll('#tab-1 > #avForm > div:nth-child(1) > table > tbody > tr:nth-child(n+4)');
 
-        for (var i = 0; i < rows.length; i++) {
-          var cells = rows[i].getElementsByTagName('td');
-          var entries = {};
+          for (var i = 0; i < rows.length; i++) {
+            var cells = rows[i].getElementsByTagName('td');
+            var entries = {};
 
-          if (rows[i].querySelector('.tabelleKoerperUo')) {
-            entries.frequency = parseFloat(cells[1].getElementsByTagName('input')[0].value.replace(',', '.'));
-            entries.month = cells[2].getElementsByTagName('select')[0].value;
-            entries.name = cells[4].getElementsByTagName('b')[0].innerHTML.trim();
-            if (cells[5].innerHTML.replace(/\t/g, '').replace(/\n/g, '') !== '') {
-              entries.amount = cells[5].innerHTML.trim().replace(',', '.').replace(/\t/g, '').split('\n');
+            if (rows[i].querySelector('.tabelleKoerperUo')) {
+              entries.frequency = parseFloat(cells[1].getElementsByTagName('input')[0].value.replace(',', '.'));
+              entries.month = cells[2].getElementsByTagName('select')[0].value;
+              entries.name = cells[4].getElementsByTagName('b')[0].innerHTML.trim();
+              if (cells[5].innerHTML.replace(/\t/g, '').replace(/\n/g, '') !== '') {
+                entries.amount = cells[5].innerHTML.trim().replace(',', '.').replace(/\t/g, '').split('\n');
+              } else {
+                entries.amount = '';
+              }
+              entries.steps = [];
+              var j = i + 1;
+              while (rows[j].querySelector('.tabelleKoerperUo') === null && j < rows.length - 1 && rows[j].querySelector('.tabelleFuss') === null) {
+                var cellsStep = rows[j].getElementsByTagName('td');
+                var step = {};
+                step.abr = cellsStep[3].innerHTML.trim();
+                step.description = cellsStep[4].innerHTML.trim();
+                step.time = parseFloat(cellsStep[6].innerHTML.trim().replace('.', '').replace(',', '.'));
+                step.fuelCons = parseFloat(cellsStep[7].innerHTML.trim().replace('.', '').replace(',', '.'));
+                step.deprec = parseFloat(cellsStep[8].innerHTML.trim().replace('.', '').replace(',', '.'));
+                step.interest = parseFloat(cellsStep[9].innerHTML.trim().replace('.', '').replace(',', '.'));
+                step.others = parseFloat(cellsStep[10].innerHTML.trim().replace('.', '').replace(',', '.'));
+                step.maintenance = parseFloat(cellsStep[11].innerHTML.trim().replace('.', '').replace(',', '.'));
+                step.lubricants = parseFloat(cellsStep[12].innerHTML.trim().replace('.', '').replace(',', '.'));
+                step.services = parseFloat(cellsStep[13].innerHTML.trim().replace('.', '').replace(',', '.'));
+                entries.steps.push(step);
+                j++;
+              }
+              results.push(entries);
+            }
+          }
+          // if option is set, get machine id's for each working step
+          if (options.getIds) {
+            const workingSteps = context.find('#avForm_checkedArbeitsvorgaenge').map((workingStep, index) => {
+              return index
+            })
+            function getDetails(iteratee, callback) {
+              data.workingStep = iteratee.toString()
+              osmosis
+                .post('https://daten.ktbl.de/vrpflanze/prodverfahren/editAv', {
+                  'checkedArbeitsvorgaenge': data.workingStep.toString(),
+                  'action:modifyAv': 'Arbeitsgang ersetzen'
+                })
+                .config('headers', {
+                  'cookie': data.cookie,
+                  'referer': 'https://daten.ktbl.de/vrpflanze/prodverfahren/showResult.action'
+                })
+                .then((context) => {
+                  const dom = new JSDOM(context)
+
+                  const index = data.workingStep
+                  const procedureGroupNode = dom.window.document.getElementById('loadArbeitsverfahren_selectedGruppe')
+                  const procedureNameNode = dom.window.document.getElementById('loadMaschinenkombinationen_selectedArbeitsverfahren')
+                  const machCombinationNode = dom.window.document.getElementById('loadResult_selectedMaschinenkombination')
+
+
+                  if (!procedureNameNode) {
+                    q.push(index, (err) => {
+                      if (err) reject(err)
+                    })
+                    return setTimeout(() => {
+                      return callback()
+                    }, 2000);
+
+                  }
+
+                  const procedure = procedureNameNode.selectedOptions[0].text
+                  const procedureGroup = procedureGroupNode.selectedOptions[0].text
+                  const machCombination = machCombinationNode.selectedOptions[0].text
+
+                  const procedureId = procedureNameNode.selectedOptions[0].value
+                  const procedureGroupId = procedureGroupNode.selectedOptions[0].value
+                  const machCombinationId = machCombinationNode.selectedOptions[0].value
+
+                  results[index] = Object.assign({
+                    'procedure': procedure,
+                    'procedureGroup': procedureGroup,
+                    'machCombination': machCombination,
+                    'procedureId': procedureId,
+                    'procedureGroupId': procedureGroupId,
+                    'machCombinationId': machCombinationId
+                  }, results[index])
+                  return callback()
+                })
+                .error(reject)
+            }
+
+            const q = async.queue(getDetails, 1)
+
+            q.drain = () => {
+              return resolve(results)
+            }
+            q.error(function(err, task) {
+              console.error('task experienced an error');
+            });
+
+            if (workingSteps.length) {
+              results.forEach((workingStep, index) => {
+                q.push(index, (err) => {
+                  if (err) return reject(err)
+                })
+              })
             } else {
-              entries.amount = '';
+              reject('No data')
             }
-            entries.steps = [];
-            var j = i + 1;
-            while (rows[j].querySelector('.tabelleKoerperUo') === null && j < rows.length - 1 && rows[j].querySelector('.tabelleFuss') === null) {
-              var cellsStep = rows[j].getElementsByTagName('td');
-              var step = {};
-              step.abr = cellsStep[3].innerHTML.trim();
-              step.description = cellsStep[4].innerHTML.trim();
-              step.time = parseFloat(cellsStep[6].innerHTML.trim().replace('.', '').replace(',', '.'));
-              step.fuelCons = parseFloat(cellsStep[7].innerHTML.trim().replace('.', '').replace(',', '.'));
-              step.deprec = parseFloat(cellsStep[8].innerHTML.trim().replace('.', '').replace(',', '.'));
-              step.interest = parseFloat(cellsStep[9].innerHTML.trim().replace('.', '').replace(',', '.'));
-              step.others = parseFloat(cellsStep[10].innerHTML.trim().replace('.', '').replace(',', '.'));
-              step.maintenance = parseFloat(cellsStep[11].innerHTML.trim().replace('.', '').replace(',', '.'));
-              step.lubricants = parseFloat(cellsStep[12].innerHTML.trim().replace('.', '').replace(',', '.'));
-              step.services = parseFloat(cellsStep[13].innerHTML.trim().replace('.', '').replace(',', '.'));
-              entries.steps.push(step);
-              j++;
-            }
-            results.push(entries);
-          }
-        }
-
-        // if option is set, get machine id's for each working step
-        if (options.getIds) {
-          const workingSteps = context.find('#avForm_checkedArbeitsvorgaenge').map((workingStep, index) => {
-            return index
-          })
-
-          function getDetails(iteratee, callback) {
-            data.workingStep = iteratee.toString()
-            osmosis
-              .post('https://daten.ktbl.de/vrpflanze/prodverfahren/editAv', {
-                'checkedArbeitsvorgaenge': data.workingStep.toString(),
-                'action:modifyAv': 'Arbeitsgang ersetzen'
-              })
-              .config('headers', {
-                'cookie': data.cookie,
-                'referer': 'https://daten.ktbl.de/vrpflanze/prodverfahren/showResult.action'
-              })
-              .then((context) => {
-                const dom = new JSDOM(context)
-
-                const index = data.workingStep
-                const procedureGroupNode = dom.window.document.getElementById('loadArbeitsverfahren_selectedGruppe')
-                const procedureNameNode = dom.window.document.getElementById('loadMaschinenkombinationen_selectedArbeitsverfahren')
-                const machCombinationNode = dom.window.document.getElementById('loadResult_selectedMaschinenkombination')
-
-
-                if (!procedureNameNode) {
-                  q.push(index, (err) => {
-                    if (err) reject(err)
-                  })
-                  return setTimeout(() => {
-                    return callback()
-                  }, 2000);
-
-                }
-
-                const procedure = procedureNameNode.selectedOptions[0].text
-                const procedureGroup = procedureGroupNode.selectedOptions[0].text
-                const machCombination = machCombinationNode.selectedOptions[0].text
-
-                const procedureId = procedureNameNode.selectedOptions[0].value
-                const procedureGroupId = procedureGroupNode.selectedOptions[0].value
-                const machCombinationId = machCombinationNode.selectedOptions[0].value
-
-                results[index] = Object.assign({
-                  'procedure': procedure,
-                  'procedureGroup': procedureGroup,
-                  'machCombination': machCombination,
-                  'procedureId': procedureId,
-                  'procedureGroupId': procedureGroupId,
-                  'machCombinationId': machCombinationId
-                }, results[index])
-                return callback()
-              })
-          }
-
-          const q = async.queue(getDetails, 1)
-
-          q.drain = () => {
+          } else {
             return resolve(results)
           }
-
-          results.forEach((workingStep, index) => {
-            q.push(index, (err) => {
-              if (err) return reject(err)
-            })
-          })
-
-        } else {
-          return resolve(results)
+        } catch (e) {
+          reject(e)
         }
       })
+      //.log(console.log)
       .error(reject)
+      //.debug(console.log)
   })
 }
