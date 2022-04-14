@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/Toffi-123/KTBL-APIs#readme",
   "dependencies": {
-    "async": "^2.6.1",
+    "async": "^3.2.2",
     "fuzzaldrin": "^2.1.0",
     "fuzzysort": "^1.1.4",
     "js2xmlparser": "^3.0.0",
